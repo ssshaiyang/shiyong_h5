@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>同户名修改</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/regist.css"/>
+
+<script type="text/javascript" src="../Scripts/sendexist.js"></script>
+
+<script>
+    $(function() {
+        $("#form").Validform();
+        $("#form").form({
+            success: function(data) {
+                if (!data.Result) {
+                    myAlert(data.Message);
+                } else {
+                    var returnurl = "";
+                    var url = returnurl != "" ? returnurl : "/UserAccount/AccountSecurity";
+                    location.href = url;
+                }
+            }
+        });
+        bindCaptcha("#btnCaptcha");
+    });
+</script>
+<form id="form">
+    <header class="header regist-top"><i class="arrows" onclick="history.go(-1)"></i>用户名修改</header>
+    <div class="regist-content conent alipay">
+        <section class="clearfix">
+            <span class="cellphone nw-doit">当前用户名：<span id="nowNum"></span></span>
+        </section>
+        <section class="clearfix">
+            <input style="width: 100%" name="alipayAccount" id="alipayAccount" class="auto-input it lf" type="text" placeholder="填写新的用户名"/>
+        </section>
+        <section class="clearfix">
+            <input style="width: 100%" name="alipayName" id="alipayName" class="auto-input it lf" type="text" placeholder="填写登陆密码" datatype="*"/>
+        </section>
+        <section class="clearfix">
+            <input type="text" style="display: none;" id="phone" name="phone" value="" datatype="*"/>
+            <span class="cellphone nw-doit">手机号：<span id="phonenum"></span></span>
+            <div id="btnCaptcha"  class="auto-btn bl rt" style="background: #FF9900; margin-right: 0;" >获取验证码</div>
+        </section>
+        <section><input id="code" name="code" class="auto-input" type="text" placeholder="填写验证码" datatype="*"/></section>
+        <section style="background-color: #FF9900" class="auto-btn"  onclick="pausub()">提交</section>
+    </div>
+</form>s
+<script type="text/javascript">
+    // 获取当前支付宝账号
+    $.ajax({
+        url:"http://api.feizhugou.com/users/getAccountSecurity",
+        dataType:'json',
+        async:true,
+        type:'GET',
+        success:function(data){
+            if(data.code == 1000){
+                $('#nowNum').html(data.data.alipayAccount);
+            }
+        }
+    });
+    // 将手机号隐藏位数显示
+    $.ajax({
+        url:"http://api.feizhugou.com/users/getAccountSecurity",
+        dataType:'json',
+        async:true,
+        type:'GET',
+        success:function(data){
+            console.log(data);
+            if(data.code == 1000){
+                phonenum = data.data.phone;
+                var arr = phonenum.split('');
+                 arr.splice(3,5,'*******');
+                $('#phonenum').html(arr);
+                $('#phone').val(phonenum);
+            }else{
+               
+            }
+        }
+    });
+    function pausub(){
+        if($('#alipayAccount').val() =='' || $('#alipayAccount').val() == '' || $('#alipayAccount').val() ==''){
+            $('#form').submit();
+        }else{
+            console.log($('#alipayAccount').val());
+            console.log($('#alipayAccount').val());
+            console.log($('#alipayAccount').val());
+            $.ajax({
+            url:"http://api.feizhugou.com/users/modify/alipay",
+            dataType:'json',
+            async:true,
+            type:'POST',
+            data:{
+                alipayAccount:$('#alipayAccount').val(),
+                alipayName:$('#alipayName').val(),
+                phone:phonenum,
+                code:$('#code').val(),
+            },
+            success:function(data){
+                console.log(payIdtype)
+                if(data.code == 1000){
+                    if(payIdtype!=-1){
+                        location.href = '../UserAccount/MoneyDrawApply.html';
+                    }else{
+                        location.href = '../UserAccount/AccountSecurity.html';
+                    }
+                }else{
+                    myAlert(data.msg)
+                }
+            }
+        })
+    }
+    }
+</script>
+
+        <div style="margin-bottom: 2rem;">
+        </div>
+        <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class=" relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+               <a class=" home" href="../home/list.html">
+                     <i class="iconfont icon-gift"></i><i class="iconfont iconS icon-giftS"></i>免费试用
+                </a>
+                <a class=" daily_task" href="../Invitation.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>分享赚钱
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>试用进展
+                </a>
+                <a class="on more" href="../UserAccount/UserAccount.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>我的
+                </a>
+            </div>
+        </footer>
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

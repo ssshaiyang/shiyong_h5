@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>操作任务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        if(localStorage.getItem('token')){
+            var valToken = localStorage.getItem('token');
+            $.ajaxSetup({
+           headers: { 'Accept': 'aplication/json','Authorization':''+ valToken }
+            });
+            $.ajax({
+                url:"http://api.feizhugou.com/users",
+                dataType:'json',
+                async:true,
+                type:'GET',
+                success:function(data){
+                    console.log(data);
+                    if(data.code != 1000){
+                        localStorage.removeItem('token');
+                        location.href ='../UserAccount/Login.html';
+                    }
+                }
+            })
+        }else{
+          myAlert("请登录");
+            location.href ='../UserAccount/Login.html';
+        }
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link href="../Content/themes/JPinFlow.css" rel="stylesheet" />
+<script src="../Scripts/uploadimage.js"></script>
+
+<header class="header task-top frv" style="line-height: 2rem;background-color: #FF9900;color: #fff">
+    <i class="arrows" onclick="history.go(-1)"></i>
+    操作任务
+</header>
+<script type="text/javascript">
+    function paymoney(){
+        if($('#newmoney').val().length<=0){
+            myAlert('实际付款金额未填写')
+        }else if($('#newmoneyId').val().length<=0){
+            myAlert('实际付款金额未填写')
+        }else{
+            console.log(123)
+        }
+    }
+</script>
+    <div style="height: 2rem"></div>
+<div class="Flow">
+   
+    <script type="text/javascript" src="../Scripts/getshops.js"></script>
+    <div class="usera-kong"></div>
+    <div class="Flow-page" style="color: #FF9900">
+            <span>第四步 填写实付金额</span>
+    </div>
+      <input id="newmoney"  class="auto-input" type="text" placeholder="请输入实际付款金额" datatype="*1-16"/>
+      <input id="newmoneyId" class="auto-input" type="text" placeholder="请输入淘宝订单编号" datatype="*1-16"/>
+    <div onclick="paymoney()" style="width: 90%;text-align: center;margin: 1rem auto;background-color: #fff;line-height: 2rem">提交任务</div>
+    
+</div>
+
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

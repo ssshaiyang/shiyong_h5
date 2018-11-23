@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>绑定银行卡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css?v=0825" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link href="../Content/themes/JPinFlow.css" rel="stylesheet" />
+<script src="../Scripts/uploadimage.js"></script>
+<script src="../Scripts/clipboard.min.js"></script>
+<script type="text/javascript">
+     $(function() {
+        $("#form").Validform();
+        $("#form").form({
+            success: function(data) {
+                if (data.code == 1000 && data.msg =='ok') {
+                    myAlert("修改提现密码成功",function() {
+                       location.href = '../UserAccount/AccountSecurity.html?' + phone;
+                    });
+                } else {
+                    myAlert("修改提现密码错误");
+                }
+            }
+        });
+    });
+</script>
+    <header class="header task-top frv" style="line-height: 2rem;background-color: #FF9900;color: #fff">
+        <i class="arrows" onclick="history.go(-1)"></i>
+        绑定银行卡
+    </header>
+    <div style="height: 2rem"></div>
+    <form id="form" class="Flow" method="POST">
+        <div>
+             <select id="city" class="auto-input" >
+                <option  value="0">请选择</option>
+                <option  value="工商银行">工商银行</option>
+                <option  value="江苏银行">江苏银行</option>
+                <option  value="农业银行">农业银行</option>
+            </select>
+        </div>
+         <section class="clearfix">
+            <input  class="auto-input" type="text" placeholder="开户省市" datatype="*1-16"/>
+        </section>
+         <section class="clearfix">
+            <input  class="auto-input" type="text" placeholder="持卡人姓名" datatype="*1-16"/>
+        </section>
+         <section class="clearfix">
+           <input  class="auto-input" type="text" placeholder="银行卡卡号" datatype="*16-18"/>
+        </section>
+         <section class="clearfix">
+           <input  class="auto-input" type="text" placeholder="开户行支行名称" datatype="*1-16"/>
+        </section>
+        <div class="btn" style="color: red;background-color: #fff;margin-top: 2rem" onclick="postDay()">
+            提交
+        </div>
+    </form>
+
+<div>
+    <script>
+    var bollanns =0;
+    function onsub3(){
+            $('#pic3').ajaxSubmit(function(data){ 
+                console.log(data)
+                if(data.code==1000){
+                    var pic3 = data.data;  
+                     localStorage.setItem('pic3',pic3);
+                    bollanns =1;  
+                }else{
+                    myAlert(data.msg)
+                    bollanns=0;
+                }             
+
+            }); 
+        return false;
+    }
+    function updateUrl(url,key){
+        var key= (key || 't') +'=';  //默认是"t"
+        var reg=new RegExp(key+'\\d+');  //正则：t=1472286066028
+        var timestamp=+new Date();
+        if(url.indexOf(key)>-1){ //有时间戳，直接更新
+            return url.replace(reg,key+timestamp);
+        }else{  //没有时间戳，加上时间戳
+            if(url.indexOf('\?')>-1){
+                var urlArr=url.split('\?');
+                if(urlArr[1]){
+                    return urlArr[0]+'?'+key+timestamp+'&'+urlArr[1];
+                }else{
+                    return urlArr[0]+'?'+key+timestamp;
+                }
+            }else{
+                if(url.indexOf('#')>-1){
+                    return url.split('#')[0]+'?'+key+timestamp+location.hash;
+                }else{
+                    return url+'?'+key+timestamp;
+                }
+            }
+        }
+    }
+
+     $('#up-img').on('click',function(){
+        $('#file3').click();
+
+    })
+    function c3(){
+         var r= new FileReader();
+              f=document.getElementById('file3').files[0];
+               
+              r.readAsDataURL(f);
+              r.onload=function (e) {
+                var src1 = ''+ this.result;
+                $('#up-img').attr('src',src1);
+                  $('#paybtn3').click();
+              };
+     } 
+     function postDay(){
+        if($('#city').val()==0){
+            myAlert("银行未选择")
+        }else{
+            $('#form').submit()
+        }
+        // if($('#order-nums').val().length <= 0){
+        //     myAlert('请填写填写用户名');
+        // }else if(bollanns !=1){
+        //     myAlert('请上传身份证图片');
+        // }else{
+             
+        // }
+
+     }
+</script>
+    <form id="pic3"  action="http://api.feizhugou.com/upload"  onsubmit="return onsub3()" target="_blank"  method="post" enctype="multipart/form-data">
+        <input type="file" id="file3" name="file" onchange="c3()" style="display:none"/>
+        <button id="paybtn3"></button>
+    </form>
+</div>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

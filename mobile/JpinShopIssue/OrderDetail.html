@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>订单详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+            var loc = location.href;
+    var arr = loc.split('?')[1];
+    var aidType = arr.split('&')[2];
+    // var typeId = aidType.split('=')[1];
+    // var typecheckId=-1;
+    // if(typeId.length>=1){
+    //     typecheckId=typeId;
+    // }
+    // function hisBackurl(){
+    //     if(typecheckId!=-1){
+             // location.href="./List.html?type="typecheckId
+    //     }else{
+    //     history.go(-1)(-1)
+    // }
+    // }
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link href="../Content/themes/jp/flow.css" rel="stylesheet" />
+<header class="header task-top frv" style="line-height: 2rem">
+    <i class="arrows" onclick="history.go(-1)(-1)"></i>
+    订单详情
+</header>
+<div style="height: 2rem"></div>
+<div class="Flow">
+    <p class="flow-num" id="courierNumber"></p>
+    <div class="Flow-hd">
+             <img id="shopspic" src="" alt="加载失败" />
+        <ul>
+            <li><span class="iconfont icon-tm"></span><span id="shopname"></span></li>
+            
+                <li>店铺名称：<span id="storename"></span></li>
+            
+            <li class="gray" id="shopmoney">价格</li>
+            <li class="gray" id="shopSpecifications">规格：无</li>
+        </ul>      
+    </div>   
+                 <div style="height: 1.6rem; line-height: 1.4rem; text-align: center;">
+                 </div>
+    <div class="usera-kong"></div>
+<div class="flow-item">
+    <p>加入购物车</p>
+    <div>
+        <i class="iconfont icon-shijian"></i><span id="firsttime"></span>
+        <span id="button1" class="btn no-event gray">已完成</span>
+    </div>
+</div>
+    <div class="usera-kong"></div>
+    <div class="flow-item">
+        <p>收藏/关注宝贝和店铺</p>
+        <div>
+            <i class="iconfont icon-shijian"></i><span id="time1"></span>
+    <span  id="button2" class="btn gray" data-link="modifystorage">查看</span>
+        </div>
+    </div>
+            <div class="usera-kong"></div>
+        <div class="flow-item">
+                <p>货比三家</p>
+            
+            <div>
+                <i class="iconfont icon-shijian"></i><span id="time2"></span>
+                    <span id="button3" class="btn gray" data-link="modifywatchotherShop">查看</span>
+            </div>
+        </div>
+    
+        <div class="usera-kong"></div>
+    <div class="flow-item">
+        <p>订单信息</p> 
+        <div>
+            <i class="iconfont icon-shijian"></i><span id="time3" ></span>
+                <span id="button4" class='btn gray' data-link='modifyenterinfo'>查看</span>
+            
+        </div>
+    </div>
+       <!--  <div class="usera-kong"></div>
+        <div class="flow-item">
+            <p>试用心得</p>
+            <div>
+                <i class="iconfont icon-shijian"></i><span id="time4"></span>
+                    <span id="button5" class='btn gray' data-link='modifyEvaluate'>查看</span>
+
+            </div>
+        </div> -->
+    </div>
+<script type="text/javascript" >
+    var shopdata=[]
+    var oidArr = arr.split('&')[0];
+    var oid = oidArr.split('=')[1];
+
+    var aidArr = arr.split('&')[1];
+    var aid = aidArr.split('=')[1];
+    $.ajax({
+        url:"http://api.feizhugou.com/order/"+ oid,
+        dataType:'json',
+        async:true,
+        type:'GET',
+        success:function(data){
+            var arr =data.data;
+            shopdata=data.data;
+            $('#courierNumber').html("订单号："+arr.order_number)
+            if(arr.type >= 1){
+                $('#firsttime').html(''+ arr.first_time);
+                $('#button1').removeClass('gray');
+                $('#button1').addClass('red-white');
+            }
+            if(arr.type >= 2){
+                console.log(1);
+                $('#time1').html(''+ arr.second_time);
+                $('#button2').removeClass('gray');
+                $('#button2').addClass('red-white');
+
+                $('#time2').html(''+ arr.second_time);
+                $('#button3').removeClass('gray');
+                $('#button3').addClass('red-white');
+
+                $('#time3').html(''+ arr.second_time);
+                $('#button4').removeClass('gray');
+                $('#button4').addClass('red-white');
+            }
+            if(arr.type >=4){
+                $('#time4').html(''+ arr.third_time);
+                $('#button5').removeClass('gray');
+                $('#button5').addClass('red-white');
+            }
+        }
+    })
+    $.ajax({
+        url:"http://api.feizhugou.com/order/get/one/" + aid,
+        dataType:'json',
+        async:true,
+        type:'GET',
+        success:function(data){
+            console.log(data)
+                $('#shopname').html(data.data.title);
+                $('#storename').html(data.data.hideShopName);
+                $('#shopmoney').html('价格：'+data.data.price);
+                $('#shopspic').attr('src',''+data.data.imgUrl)
+            }
+    })
+</script>
+<script type="text/javascript">
+    var orderid = '7210145';
+    $(".info-cat span").on("click", function () {
+        $(this).addClass("act").siblings().removeClass("act");
+    })
+
+    $(".flow-con span.btn").on("click", function () {
+        $(".flow-con").slideUp();
+    });
+
+    $(".show-flow").on("click", function () {
+        $(".flow-con").fadeIn();
+    })
+    $(".flow-item .btn").on("click", function () {
+        if ($(this).hasClass("gray")) {
+            return false;
+        }
+        if ($(this).hasClass("no-event")) {
+            return false;
+        }
+        var title = $(this).data("link");
+        var h = 11;
+        var titlePic=""
+        var  html='<div style="height:8rem"></div>'
+        if (title == "modifystorage") {
+           titlePic = shopdata.second_orderPic;
+            html = 
+            '<div style="height: 8rem;overflow: hidden;float: left;width: 50%;margin: 0;text-align: center;"><span>收藏/关注宝贝</span><img src="' + titlePic + '" style="width:6rem;margin-top:2rem"></div><div style="height: 8rem;overflow: hidden;float: left;width: 50%;margin: 0;text-align: center;"><span>收藏/关注店铺</span><img src="' + shopdata.second_shopCollect + '" style="width:6rem;margin-top:2rem"></div>';
+            }
+        if(title=="modifywatchotherShop"){
+             html = 
+             '<div> <span style="display: inline-block;vertical-align: middle;line-height: 2rem;color: #555;width: 4.5rem;text-align: right">货比淘口令1：</span><input  readonly="readonly" style="width: 10rem;height: 1.8rem;border: 1px solid #ddd" value="'+shopdata.second_newPassword_one+'"></div><span style="display: inline-block;vertical-align: middle;line-height: 2rem;color: #555;width: 4.5rem;text-align: right">货比淘口令2：</span><input  readonly="readonly" style="width: 10rem;height: 1.8rem;border: 1px solid #ddd" value="'+shopdata.second_newPassword_two+'"></div><span style="display: inline-block;vertical-align: middle;line-height: 2rem;color: #555;width: 4.5rem;text-align: right">货比淘口令3：</span><input  readonly="readonly" style="width: 10rem;height: 1.8rem;border: 1px solid #ddd" value="'+shopdata.second_newPassword_three+'"></div>';
+            }
+        if (title == "modifyenterinfo") {
+             html = 
+             '<div><span style="display: inline-block;vertical-align: middle;line-height: 2rem;color: #555;width: 4.5rem;text-align: right">订单号:</span><input  readonly="readonly" style="width: 6rem;height: 1.8rem;border: 1px solid #ddd" value="'+shopdata.order_number+'"></div><div style="margin-top:0.2rem" ><span style="display: inline-block;vertical-align: top;line-height: 2rem;color: #555;width: 4.5rem;text-align: right">订单截图:</span><img style="width:6rem;height:6rem" src="'+shopdata.second_orderPic+'"></div>';
+        }
+        // 底部对话框
+        // var html = 
+        // '<div style="height:8rem"><img src="' + titlePic + '" style="width:6rem;margin-top:2rem"><img  src="' + titlePic + '" style="width:6rem;margin-left:2rem;margin-top:2rem"></div>';
+        layer.open({
+            type: 1,
+            content: html,
+            anim: 'up',
+            style: "position:fixed; bottom:0; left:0;width:100%;box-sizing:border-box; font-family:Microsoft Yahei;padding:0.4rem;",
+            shadeClose: true
+        });
+        
+    })
+
+</script>
+
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

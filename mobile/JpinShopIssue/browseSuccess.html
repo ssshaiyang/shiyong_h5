@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>已完成浏览任务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        if(!localStorage.getItem('token')){
+            location.href = '../UserAccount/Login.html';
+        }
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link href="../Content/themes/jp/list.css" rel="stylesheet" />
+<script src="../Scripts/jquery.infinitescroll.js"></script>
+<script src="../Scripts/jquery.countdown.js"></script>
+<script>
+
+</script>
+<header class="header task-top frv" style="line-height: 2rem;background-color: #FF9900;color: #fff">
+    <i class="arrows" onclick="history.go(-1)"></i>
+    已完成浏览任务
+</header>
+<div style="height: 2rem"></div>
+<!-- <script type="text/javascript" src="../Scripts/listshow.js"></script> -->
+<style type="text/css">
+        .jp-hd li{width: 100%}
+    </style>
+<div id="shadow" style="position: fixed;top: 0;left: 0;display: none; background-color: rgba(0,0,0,0.3);z-index: 1100;height: 100%;width: 100%;">
+    
+</div>
+<dl class="list" id="list">
+
+    <dd class="my-list">
+        <a><img onclick="runother(94,0,130,)" src="https://gd3.alicdn.com/imgextra/i4/34203113/TB2a9D.z1uSBuNjSsziXXbq8pXa_!!34203113.jpg_400x400.jpg" alt="加载失败">
+            <div style="position:absolute;left:0;bottom:0;"></div>
+        </a>
+        <ul class="item-con">
+            <li style="overflow: hidden;border-bottom: 1px solid #dedede"><span class="iconfont icon-tm" style="margin-right:0;"></span>大泽山<span style="float:right">2018.8.29</span></li>
+            <li></li>
+            <li>价值：<span>150.00</span></li>
+            <li><em>垫付038.0元</em>平台返款</li>
+        </ul>
+        <div class="jp-btn clearfix"><a href="javascript:void(1);" style="background-color: #C0C0C0">已完成</a></div></dd>
+</dl>
+<!-- <script type="text/javascript" src="../Scripts/Listdetails.js"> -->
+<!-- </script> -->
+       
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

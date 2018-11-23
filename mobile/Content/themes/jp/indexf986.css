@@ -1,0 +1,328 @@
+﻿body{font-size: 0.6rem;}
+.jp-fixed-top{background-color: #fff; padding-top: 0.2rem; z-index: 10; position: fixed;top: 0;width: 100%;left: 0;height: 3.3rem;box-shadow: 0 0 0.2rem #ddd;}
+.jp-hd{ position: relative; height: 1.1rem;padding: 0.3rem 0.4rem; display: flex; flex-direction: row;align-items: center; justify-content: space-between;background-color: #fff;}
+.jp-hd i{font-size: 1rem; color:#8f8f90;text-align: center;line-height: 1.1rem;}
+.jp-hd i.icon-sign{color: #ff464e;}
+.jp-hd a{ position: relative;}
+.jp-hd em{ background-color: #ff464e; height:0.3rem; width:0.3rem; border-radius:0.15rem;  position: absolute; top: 0; left:0.7rem; z-index: 1;}
+.jp-hd .btn{height: 1.1rem;line-height: 1rem;  text-align: center;border-radius: 5px;box-sizing: border-box; width: 2rem;border: 1px solid #f86357;color: #f86357;}
+.jp-hd div{width:12rem; position: relative; line-height: 1.1rem; background-color: #f3f3f3; border-radius:0.55rem;}
+.jp-hd div input{ border-radius:0.55rem;height:1.1rem;width: 100%; border: 1px solid transparent;outline: none;background: transparent;text-indent: 1em;}
+.jp-hd div span{ top: 0; right: 0.4rem; font-size: 0.6rem; text-align: center;line-height:1.2rem;color: #999; position: absolute;display: block;}
+.jp-hd div input:focus{border: none;box-shadow: none;}
+.jp-cat-bg{height: 1.6rem;overflow: hidden; -webkit-overflow-scrolling: touch;}
+.jp-cat{background-color: #fff; padding:0.2rem 0.4rem;height: 1.8rem;overflow: scroll;}
+.jp-cat ul{height: 1.2rem; line-height: 1.2rem; width: 20rem;display: flex;justify-content: space-between;padding-right:0.4rem;}
+.jp-cat ul a{z-index: 10; float: left; color: #555;display: block;height: 1.3rem;line-height: 1.3rem;}
+.jp-cat ul a.act{border-bottom: 0.085rem solid #ff464e ;color: #ff464e;}
+.jp-icon{display: flex;justify-content: space-between; flex-wrap: wrap; background-color: #fff;padding: 0.5rem 0.4rem;}
+.jp-icon img{height:1.75rem;width: auto;}
+.jp-icon  span{display:block; height: 1.2rem;line-height: 1rem}
+.jp-icon  li{text-align: center; width: 20%;}
+.jp-icon  li a{color: #555; font-size: 0.55rem; display: block;}
+.groom-title{background-color: #fff;margin: 0 0.4rem 0.4rem;font-size: 0.65rem; border-left: 0.128rem solid #ff464e;height:0.7rem;padding: 0 0.3rem;line-height:0.7rem;}
+.groom-title a.right-title{
+    float:right;
+    margin-right:-0.4rem;
+    color:#333;
+    font-size:0.55rem;
+}
+.groom-title a.right-title>i{
+    display:inline;
+    font-size:0.55rem;
+}
+.jp-groom{
+	height:6.2rem;overflow: hidden;
+     -webkit-overflow-scrolling: touch;
+}
+
+.jp-groom-bg{background-color: #fff;padding-top: 0.4rem;}
+.jp-groom>div{height:8rem;overflow-x: scroll; padding-left: 0.4rem;}
+.jp-groom>div ul{width:33rem;display: flex;justify-content: space-between;padding-right: 0.4rem;}
+.jp-groom>div ul li{text-align: center;}
+.jp-groom>div ul img{width:3.2rem;height:3.2rem; display: block;}
+.jp-groom>div ul li span.t-price{ font-size: 0.55rem; margin: 0.2rem auto 0.1rem; display: inline-block; color: #ff464e; background: url(../../images/jpin/dian-red.jpg) repeat-x; background-position: center center;}
+.jp-groom>div ul li span.t-btn{ border-radius: 0.2rem; color: #ff464e; height: 1rem; font-size: 0.55rem; line-height: 1rem; margin:0 0.3rem;  display: block; border: 1px solid #ff464e;}
+
+
+.jp-con{border-top: 1px solid #ddd;}
+.plat{height:1.6rem;box-sizing:border-box;padding:0.3rem 0.5rem;color:#666;width:100%;overflow-x: scroll;overflow-y: hidden;-webkit-overflow-scrolling: touch;}
+.plat span{display:inline-block;height:1rem;line-height:1rem; background-color:#fff;border: 1px solid #999;padding:0 0.3rem;border-radius:0.2rem;margin-left:0.35rem;}
+.plat span.act{border:1px solid #ff464e;color:#ff464e;}
+.plat span:first-child{margin-left:0;}
+.plat::-webkit-scrollbar {height: 0;width: 0;display: none;background-color: transparent;}
+.jp-con .con-cat{color: #646464; background-color: #fff;
+                  padding:0 0.4rem; display: flex;flex-direction: row; 
+                  justify-content: space-between; height: 1.6rem; line-height: 1.6rem;}
+
+
+.jp-con .con-cat i{font-size: 0.55rem; color: #999; display: inline-block;vertical-align: middle;margin-left: 0.2rem;}
+.jp-con .con-cat i:last-child{font-weight: bold;}
+.jp-con .con-cat li a{ color: #999;}
+.jp-con .con-cat li.act a{ color: #ff464e;}
+.jp-con .con-cat li a.act{ color: #ff464e;}
+.jp-con .con-cat li.act{color: #ff464e;}
+.jp-con .con-cat li.act i{color: #ff464e;}
+.jp-con .jp-list li{width:7.8rem;margin-right: 0.4rem;margin-bottom: 0.4rem; background-color: #fff;}
+.jp-con .jp-list li:nth-child(2n){margin-right: 0;}
+.jp-con .jp-list { display: flex;flex-wrap: wrap;}
+.jp-con .jp-list li img{width: 100%;}
+.jp-con .jp-list li p{color: #000;padding:0.3rem 0.4rem; font-size: 0.6rem;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; line-height:0.8rem;}
+.jp-con .jp-list li div.jp-num{color: #999; padding:0 0.4rem; font-size: 0.5rem;display: flex;flex-direction: row;justify-content: space-between;}
+.jp-con .jp-list li div.jp-num span:first-child{color: #ff464e;text-decoration:line-through;}
+.jp-con .jp-list li div.jp-btn{display: flex;justify-content: space-between;padding:0.3rem 0.4rem;}
+.jp-con .jp-list li div.jp-btn a{font-size: 0.50rem; color: #666; width: 3rem;border-radius: 4px; border: 1px solid #ddd;text-align: center; height: 1rem;line-height: 1rem;}
+.jp-con .jp-list li div.jp-btn a:first-child{background: #ff464e;border: 1px solid #ff464e;color: #fff;}
+.jp-con .jp-list li a{ position: relative; display: block; height: 7.8rem;}
+.jp-con .jp-list li a div{ position: absolute; bottom: 0; left: 0;}
+.jp-con .jp-list li a div span{ float: left; color: #fff; font-size:0.5rem; height: 0.7rem; line-height: 0.7rem;}
+.jp-con .jp-list li a div span.red{ background-color: #ff464e;}
+.jp-con .jp-list li a div span.yello{ background-color: rgb(249,127,41);}
+.jp-con .jp-list li a div span.green{ background-color: rgb(61,178,90);}
+
+.jp-con .jp-list li div.jp-btn .gray{ background-color: #ccc !important; color: #fff;  border: 1px solid #ccc !important;}
+#swiper{height: 6rem;}
+#swiper img{height: 6rem;width: 100%;}
+
+
+   .wx-share-con,.app-share-img{
+        display: none;
+		padding-top:1rem;
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+        text-align: right;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+.app-share-img{ padding-top: 0; display: none;-webkit-overflow-scrolling: touch; overflow: scroll;}
+.app-share-img div{ padding: 0 0.4rem; text-align: center; background-color: #16171A; height: 2rem; position: absolute; top: 0; left: 0; color: #fff; line-height: 2rem; width: 100%; box-sizing: border-box;}
+.app-share-img img{ width: 100%; height: auto;}
+.wx-share-con img{ width: 80%; margin-right: 1rem;}
+.app-share-img i{ float: left;}
+.app-share-img  .icon-share{ float: right;}
+.people-hit-img{ height: 6rem; width: 100%;}
+.people-hit-img img{ height: 100%; width: 100%;}
+.no-Swip{ overflow: hidden;}
+
+.showIndex{ height: auto;}
+.showHidden{ height: 0px !important; overflow: hidden  !important;}
+.fix-detail{ background-color: #fff;}
+.fix-detail .swiper-container{height:16rem;margin: 0 auto; width:100%;text-align: center;}
+.fix-detail .swiper-container img{height: 16rem;width:16rem;}
+.fix-detail .swiper-container>div{text-align: center;}
+.fix-detail .info-hd{padding: 0.4rem 0.4rem 0.5rem;}
+.fix-detail .info-hd p{ color: #333;width: 100%; 
+                        /*overflow: hidden;*/
+                        /*white-space: nowrap;text-overflow: ellipsis;*/
+                         margin-bottom:0.4rem;min-height:16px;
+                             display: -webkit-box;
+                             display: flex;
+                             
+    align-items: center;
+}
+.fix-detail .info-hd p.title>em{    color: #ff464e;
+    font-size:0.55rem;
+    border: 1px solid #ff464e;
+    border-radius: 0.1rem;
+    margin: 0 0.075rem 0;
+    vertical-align: middle;
+    padding: 0 0.05rem 0;
+    display: flex;
+    align-items: center;
+}
+.fix-detail .info-hd p.title>.name{
+    font-size:0.68rem;
+    margin-top:-0.1rem;
+    font-weight:600;
+    margin-right:0.1rem;
+    display:inline-block;
+    max-width:9rem;
+    overflow:hidden;
+    vertical-align:middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.not-area{
+    padding: 0.4rem 0.4rem 0.5rem;
+}
+.not-area .not-area-title{
+    color:#ff464e;
+}
+.not-area .icon{
+    color:#ff464e;
+    vertical-align:middle;
+    font-size:0.768rem;
+}
+/*.not-area span.zhu{
+    background:#ff464e;
+    color:#fff;
+    font-size:0.512rem;
+    padding:0 0.4rem;
+}*/
+
+
+.fix-detail .info-hd span{margin-right: 1rem; color: #636363;vertical-align: middle;    display: inline-block; margin-top:-0.1rem;}
+.fix-detail .info-hd span em{color: rgb(243,95,83);text-decoration:line-through;}
+
+.fix-detail .info-num{padding:0.4rem; border-top: 1px solid #e9e9e9; height: 0.6rem;color:#636363;}
+
+.fix-detail .info-num li{ font-size: 0.55rem; float: left; line-height:0.6rem; width:50%; height: 0.6rem; text-align: center; box-sizing: border-box; border-left: 1px solid #dedede;}
+.fix-detail .info-num li:first-child{ border: none;}
+.fix-detail .info-cat{height: 1.85rem;}
+.fix-detail .info-cat span{box-sizing: border-box;color:#666;  height: 1.85rem;border-bottom:2px solid #fafafa;line-height: 1.85rem; background: #fafafa; display: block;float: left;width:50%;text-align: center;}
+.fix-detail .info-cat span:last-child{border-left: 1px solid #ddd;}
+.fix-detail .info-cat span.act{background-color: #fff;color: #333;border-bottom: 2px solid #ff464e;color: #ff464e; padding-left: 0.4rem;}
+.fix-detail .toback{ position: absolute; top: 0.8rem; left: 0.4rem; z-index: 10;}
+.fix-detail .toback i{ color: rgba(0, 0, 0, 0.5); font-size: 1.4rem;}
+.fix-detail .info-list>div{display: none;}
+.fix-detail .info-list div.act {display: block;}
+.fix-detail .info-list .intro { padding: 0.4rem;}
+.fix-detail .info-list .intro img{ width: 100% !important; height: auto !important; vertical-align:middle;margin-left:0 !important; margin-right: 0 !important;}
+.fix-detail .info-list .intro *{ width: 100% !important;position: relative !important; font-size: 0.6rem !important; font-weight: 500; text-align: justify; line-height: 1.2rem;word-wrap: break-word;box-sizing:border-box;}
+.fix-detail .info-list .intro div{ width: 100% !important;}
+.fix-detail .info-list .intro table{ width: 100% !important;}
+.info-foot{height: 2rem;width: 100%;position: fixed; display: none; bottom: 0;left: 0;z-index:1001; background-color: #f8f8f8; box-shadow: 0 0 0.3rem #999;}
+
+.info-foot div{float: left; height:1.6rem;width: 2rem;padding: 0.2rem 0; text-align: center;}
+.info-foot div:first-child{height:2rem;box-sizing:border-box;border-right:1px solid #dedede;}
+.info-foot div span{font-size: 0.55rem;}
+.info-foot div i{ font-size: 0.6rem;}
+.info-foot div *{ display: block;line-height: 0.8rem;}
+.info-foot>span,.info-foot>a{font-size: 0.6rem; color: #fff; line-height: 2rem;height:2rem;text-align: center; float: left;display: block;width: 6rem; box-sizing:border-box;}
+.info-foot> .get-invite{background: url(../../images/JPin/info-bg1.png) no-repeat ;background-position: center center;background-size: 100% 100%; }
+.info-foot> .get-invite1{background: url(../../images/JPin/info-bg1.png) no-repeat ;background-position: center center;background-size: 100% 100%; }
+.info-foot> .get-apply{background: url(../../images/JPin/info-bg.png) no-repeat  ;background-position: center center;background-size: 100% 100%;}
+.info-foot> .get-apply.pink{ line-height: 0.8rem; padding: 0.2rem 0;}
+.info-foot> .get-invite.gray{ background-image: none; background-color: #bbb; color: #fff;}
+.info-foot> .get-invite.double-line{line-height: 0.8rem;padding: 0.2rem 0 0.2rem 0.1rem; box-sizing:border-box;}
+.info-foot> .get-invite.gold{ line-height: 0.8rem; padding: 0.2rem 0 0.2rem;}
+.info-foot a:visited { color: #636363;}
+.info-foot a.back{ color: #636363;}
+.info-foot a.back *{ color: #636363;}
+.info-foot> a.get-invite{color: #fff}
+.info-foot> a.get-invite:visited{color: #fff}
+.info-foot> a.get-invite1{color: #fff}
+.info-foot> a.get-invite1:visited{color: #fff}
+.info-foot> a.get-apply:visited{color: #fff}
+#swiper2{ height: 16rem; width: 16rem; overflow: hidden;} 
+#swiper2 img{ height: 16rem; width: 16rem;}
+
+ .flex-bg{top: 0;display: none; background-color: rgba(0,0,0,0.5);
+ position: fixed;left:0;z-index: 1020;height: 100%;width: 100%;}
+ .flow-con {-o-animation: fadeInBottom .5s  ease forwards;
+	animation: fadeInBottom .3s ease forwards;top: 0;display: none;
+ position: fixed;left:0;z-index: 1030;height: 100%;width: 100%;}
+ .flow-con .code-con{position: relative;height: 100%;width: 100%;}
+ .flow-con .code-con .dona-bottom{background-color: #fff; position: absolute;bottom: 0;left: 0;width: 100%;}
+ .flow-con .dona-bottom h3{ font-weight: 500; margin:0 0.4rem;height: 1.8rem;line-height: 1.8rem;border-bottom: 1px solid #dedede;}
+ .flow-con .dona-bottom img{height: auto;height:11.5rem;}
+ .flow-con .dona-bottom div{text-align: center;margin: 1rem 0;}
+  .flow-con .dona-bottom div.not-area-tips{
+    height:6.656rem;
+    margin:0;
+    padding:  0 0.853rem 0.682rem 0.853rem;
+    text-align:left;
+}
+ .flow-con .dona-bottom>span{ color: #555; border-top: 1px solid #dedede; border-radius: 0; display: block;height: 1.8rem;line-height: 1.8rem;text-align: center;font-size: 0.7rem;}
+ .flow-con input{ border: 1px solid #dedede; height: 1.6rem; line-height: 1.6rem; width: 100%; color: #333; font-size: 0.65rem; text-indent: 1em;}
+ .flow-con input:focus{ border: 1px solid #00bfff; box-shadow: 0 0 0.4rem #00bfff; outline: #00bfff;}
+ .flow-con .dona-bottom div.pd4{ padding: 0 0.4rem;}
+ .flow-con ul { display: flex; flex-wrap: wrap; padding-bottom: 1rem;}
+ .flow-con ul  li{width: 50%; text-align: center; font-size: 0.65rem;}
+ .flow-con ul  li i{ display: inline-block; vertical-align: middle; color: #999; margin-right: 0.3rem;}
+ .flow-con ul  li label.act i{ color: #ff464e;}
+
+#detail .get-more{text-align: center;line-height: 2rem;}
+#detail .get-more a{color: #54B7F1;}
+@-o-keyframes fadeInBottom {
+	0% {
+		top: 100%;
+		opacity: 0;
+	}
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInBottom {
+	0% {
+		top: 100%;
+		opacity: 0;
+	}
+	100% {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIntop{
+	0% {
+		top: 0;
+		opacity: 1;
+	}
+	100% {
+		top: 100%;
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIntop {
+	0% {
+		top: 0;
+		opacity: 1;
+	}
+	100% {
+		top: 100%;
+		opacity: 0;
+	}
+}
+.fadeout{
+	-o-animation: fadeIntop .3s  ease forwards;
+	animation: fadeIntop .3s ease forwards;top: 0;
+}
+[ng-cloak] {display: none;} 
+.jp-list.gold li >a{ position: relative;}
+.jp-con .jp-list.gold li{ padding-bottom: 0.2rem;}
+.jp-list.gold .goldAll{ text-align: center; position: absolute; top: 50%; left: 50%; margin-left: -2rem; margin-top: -2rem; border-radius: 2rem; line-height: 4rem; width: 4rem; height: 4rem; background: rgba(0, 0, 0, 0.4); color: #fff; font-size: 1rem;}
+.jp-list.gold .jp-num a{ height: auto; }
+.jp-list.gold .gold-num{ color: #ff464e; width: 3rem; text-align: right;margin-bottom:0.4rem;}
+.jp-con .jp-list.gold li div.jp-num a{ border-radius: 0.3rem; height: 0.6rem; line-height: 0.6rem; color: #fff; background-color: #ff464e; color: #fff; padding: 0 0.2rem;}
+.jp-con .jp-list.gold li div.jp-num a.gray{ background-color: #bbb;}
+.jp-con .jp-list.gold .gold-can-num{ margin-top: 0.2rem; align-items: center; display: flex; justify-content: space-between; padding: 0 0.4rem; font-size: 0.5rem; color: #999;}
+.jp-con .jp-list.gold .gold-can-num>div{ width: 5rem;height: 0.25rem; border-radius: 0.13rem; background-color: #eee;}
+.jp-con .jp-list.gold .gold-can-num>div div{ height: 100%; width: 50%; border-radius: 0.23rem; background-color: #f57e81;}
+/*.jp-con .jp-list.gold li div.jp-num span:first-child{ color: #999; background: url(/content/images/JPin/dian.png) center center repeat-x;}*/
+.jp-con .jp-list.gold li div.jp-num span:first-child{ color: #ff464e;text-decoration:line-through;}
+.indexCat{ height:8.6rem;}
+.indexCat> *{ box-sizing: border-box; float: left; position: relative; display: block; margin: 0; padding: 0;}
+.indexCat> *{ margin: 0; padding: 0; overflow: hidden;}
+.indexCat .indexCat1{ width: 6.4rem; height: 8.6rem; border-right:2px solid #eee;}
+.indexCat * img{ height: 100%; width: auto;}
+.indexCat .indexCat2 { height: 4.2rem; width: 9.6rem; border-bottom: 2px solid #eeeeee;}
+.indexCat .indexCat3{ height: 4.4rem; width: 4.8rem; border-right: 2px solid #eee;}
+.indexCat .indexCat2 img{ width: 100%; height: auto;}
+.indexCat .indexCat4{ height: 4.4rem; width: 4.8rem;}
+.indexCat .indexCat2 div{ position: absolute; top: 1.48rem; left: 0.5rem; z-index: 1; font-size: 0.45rem; color: #ff464e; }
+.indexCat .indexCat2 div *{ display: inline-block; vertical-align: middle;}
+.indexCat .indexCat2 div span{ border-radius: 2px; height: 0.7rem; width: 0.7rem; text-align: center; line-height: 0.7rem; background-color: #ff464e; color: #fff;}
+
+.report { height: 1.4rem; padding: 0 0.5rem; overflow: hidden; background-color: #fff; border-top: 1px solid #eee;color:#333;}
+.report>*{ display: inline-block; vertical-align: top;}
+.report ul{  line-height: 1.4rem; overflow: hidden; width:11.5rem; margin-left: 0.3rem;color:#333;}
+.report >img{ height: 0.64rem; padding: 0.38rem 0; }
+.report ul em{ color: #ff464e;}
+.show-flow *{ color: #636363 !important;}
+#detail.showHidden .toback{ display: none;}
+#detail .gold-num{ padding-left: 0.25rem; color: #999; font-size: 0.55rem; line-height: 1.5rem; height: 1.5rem; margin-left: 0.5rem; background-color: #fff9f5; line-height: 1.5rem;}
+#detail .gold-num>*{ display: inline-block; vertical-align: middle;}
+#detail .gold-num img{ width: 0.5rem; width: 0.5rem; margin-right: 0.3rem;}
+#detail .gold-num b{ font-size: 0.65rem; color: #ff8e1b; margin: 0 0.1rem;}
+.info-foot> .get-apply.gray{ background-image: none; background-color: #bbb; color: #fff;border-left:1px solid #fff; box-sizing:border-box;}
+
+#guss-like{ display: block;height: 0.65rem; line-height: 1.4rem;text-align: center;color: #666;border-bottom: 2px solid #dcdcdc;position: relative;width: 5.6rem;margin: 0 auto 0.8rem;}
+#guss-like div{ width: 4rem;background: #fff;margin: 0 auto; }
+#guss-like i{ display: inline-block;color: #ff464e;margin-right: 0.2rem;vertical-align: middle;}
+#get-more{ display: none;}

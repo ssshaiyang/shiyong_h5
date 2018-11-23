@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/basee721.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfontfc6d.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/styled796.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.345ba.js"></script>
+<script type="text/javascript" src="../Scripts/Common73d4.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont39ba.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index8948.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/mytryout4317.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/account9514.css"/>
+
+<script type="text/javascript" src="../Scripts/uploadimagea806.js"></script>
+
+<script type="text/javascript" src="../Scripts/sendcaptcha97e9.js"></script>
+
+<header class="header  task-top">
+    <i class="iconfont icon-Toright" style="color: #000;display: inline-block;float: left;margin-left: 0.2rem;" onclick="history.go(-1)"></i> 注册领取试用
+</header>
+<div style="height: 2rem;"></div>
+<div class="login" style="margin-bottom: 4rem">
+    <!-- <img style="margin: 1.4rem auto" src="../Content/images/icon/icon.png" alt="Alternate Text" /> -->
+    <div class="item">
+        <input type="text" name="mobile" id="phone" value="" placeholder="请输入手机号" />
+        <span id="namewarn" class="warn"></span>
+    </div>
+     <div class="item">
+        <input type="password" name="passwd" id="passwd" placeholder="请输入密码" datatype="*6-16" />
+    </div>
+     <div class="item">
+        <input type="password" name="changepasswd" id="changepasswd" placeholder="请输再次输入密码" />
+    </div>
+    <div class="item">
+        <input type="text" name="captcha" id="captcha" placeholder="请输入验证码" />
+        <span id="pwdwarn" class="warn btn-warn">获取验证码</span>
+    </div>
+    <div class="item">
+        <input type="text" name="inviter" id="inviter" value="" placeholder="请输入邀请人" />
+        <span id="namewarn" class="warn"></span>
+    </div>
+    <div class="item">
+        <input type="text" name="QQ" id="qq" value="" placeholder="请输入QQ" />
+        <span id="namewarn" class="warn"></span>
+    </div>
+    <div class="btn red submit-btn">
+        注册
+    </div>
+</div>
+<script type="text/javascript" src="../Scripts/md5.js"></script>
+<script>
+    $(function () {
+        bindCaptcha("#pwdwarn", "#phone");
+        $(".submit-btn").on("click", function () {
+            if ($("#phone").val().length <= 0 || $("#passwd").val().length <= 0) {
+                myAlert("手机号或者邀请码未填写");
+                return false;
+            }else if($('#passwd').val().length<6){
+                if($('#passwd').val().length<=0|| $('#changepasswd').val().length<=0){
+                    myAlert("密码或验证密码未输入");
+                    return false;
+                }else{
+                    myAlert("密码至少为6位");
+                    return false;
+                }
+                
+            }
+            if($('captcha').val()<0){
+                myAlert("用户昵称为空");
+                    return false;
+            }
+            if($('#passwd').val()!=$('#changepasswd').val()){
+                myAlert("两次密码输入不一致")
+                return false;
+            }
+            var phone = $("#phone").val()+"";
+            var captcha = $("#captcha").val()+"";
+            var inviter = $("#inviter").val()+"";
+            var qq = $("#qq").val()+"";
+            var password=hex_md5($("#passwd").val())+"";
+            if (phone && captcha) {
+                $.ajax({
+                url:"http://www.xss188.com/rest/users/user/create",
+                dataType:'json',
+                async:true,
+                data:{
+                    phone: phone,
+                    password:password,
+                    captcha:captcha,
+                    qq: qq,
+                    inviter:inviter,
+                },
+                type:'POST',
+                success:function(data){
+                    console.log(data);
+                    if(data.code == 0){
+                             var result = data.data.token;
+                            // localStorage.setItem('token',result);
+                            location.href = "../index.html";
+                    }else{
+                        myAlert(data.msg)
+                    }
+                }
+                })
+            }
+        });
+    });
+</script>
+        <div style="margin-bottom: 2rem;">
+        </div>
+        <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class=" relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+               <a class=" home" href="../home/list.html">
+                     <i class="iconfont icon-gift"></i><i class="iconfont iconS icon-giftS"></i>免费试用
+                </a>
+                <a class=" daily_task" href="../Invitation.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>分享赚钱
+                </a>
+                <a class=" myjp" href="Login.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>试用进展
+                </a>
+                <a class="on more" href="Login.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>我的
+                </a>
+            </div>
+        </footer>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&amp;web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form5546.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.22e12.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading7c3b.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.me6fe.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialogae43.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookiefaf4.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browserb36e.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app7b06.js"></script>
+
+</body>
+</html>

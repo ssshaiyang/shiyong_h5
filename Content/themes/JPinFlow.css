@@ -1,0 +1,72 @@
+.Flow-hd{padding: 0.4rem;background-color: #fafafa;font-size: 0.55rem;}
+.Flow-hd img{height: 4.8rem;width:4.8rem;float: left;}
+.Flow-hd ul{margin-left:5.2rem;line-height: 1.2rem;}
+.Flow-hd ul li{ color: #999; font-size: 0.6rem; border-top:1px solid #dedede;height: 1.2rem;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.Flow-hd ul li:first-child{border-top: none; color: #333;}
+.Flow-hd ul li span{ color: #333;}
+.Flow-page{padding: 0 0.4rem; background-color: #fff; border-bottom: 1px solid #dedede;height: 1.38rem;}
+.Flow-page span{    font-size: 0.65rem;
+    display: inline-block;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-bottom: 0.2rem solid #ff464e;}
+.FlowCon{background-color: #fff;padding:0.6rem  0.4rem 0.2rem ;font-size: 0.55rem;}
+.FlowCon ul li span.num{height: 1rem;width:1rem;border-radius:0.5rem;line-height: 1rem; text-align: center; left: -0.5rem;background-color: #ff464e;color: #fff; position: absolute;display: block;}
+.FlowCon ul li {padding-bottom: 0.6rem; line-height: 1rem; position: relative; border-left: 1px solid #ff464e;padding-left:0.7rem;margin-left: 0.5rem;}
+.FlowCon ul li:last-child{border: none;}
+.FlowCon ul em.red{color: #ff464e;}
+.FlowCon.color67{ color: #999; line-height: 1rem;}
+.FlowCon em.title{ font-size: 0.65rem; color: #000;}
+.FlowCon ul textarea{border:none;display:block;line-height: 1rem; height: 2rem;outline: none;width: 100%;}
+.FlowCon ul textarea.h40{ height:4rem;}
+.FlowCon ul div.textarea{margin: 0.3rem 0; border: 1px solid #dedede;padding:0.4rem;}
+.FlowCon .flow-cat{ margin: 0.2rem 0; border-radius:5px; height: 1.4rem; line-height: 1.4rem; box-sizing: border-box; border: 1px solid #ff464e;}
+.FlowCon .flow-cat span{ height: 100%;  display: block; text-align: center; float: left; width: 50%;}
+.FlowCon .flow-cat span.act{ background-color: #ff464e; color: #fff;
+}
+.btn{ display: block; border-radius: 0;}
+.FlowCon .validate-list dd{ display: none;}
+.FlowCon .validate-list dd.act{ display: block;}
+
+.FlowCon ul div.up-img{}
+.FlowCon ul div.up-img img{vertical-align: middle;width:4.2rem;height: auto;display: inline-block;}
+.Flow >div.btn{color: #fff;background-color:#ff464e; height: 2rem;text-align: center;line-height: 2rem;font-size: 0.7rem;}
+.Flow >div.btn.gray{background-color: #aaa;}
+.FlowCon ul div.likePic img{margin-top: 0.3rem;border: 1px solid #dedede; width:13rem;height: auto;max-height:5rem;}
+.mt3{margin-top: 0.5rem;}
+
+.red{color: #ff464e;}
+.FlowCon ul div.input input{border: 1px solid #dedede; width: 8rem;vertical-align: middle;height: 1.6rem;line-height: 1.6rem;}
+.FlowCon div.warn,div.warn1{ font-size: 0.55rem; color: #636363;font-size: 0.5rem;overflow:hidden;border: 1px solid #fef0f1;background-color:#fef0f1;line-height: 1.3rem;height: 1.3rem;text-align: center; margin:0 0.3rem;}
+div.warn1{ width: 100%; border-left:none; margin-left: 0; border-right: none; color: #676767;}
+.FlowCon div.warn i{ display: inline; color: #ff464e; font-size: 0.6rem; line-height: 1.3rem; margin-right: 0.3rem;}
+
+
+.FlowCon div.filter-img img{height: 1.2rem;max-width:10rem;display: inline-block;vertical-align: middle;}
+.FlowCon div.check-url span.btn{font-size: 0.65rem; vertical-align: middle; display: inline-block;width:7rem;height:1.7rem;line-height:1.65rem;font-size: 0.65rem;color: #fff;background-color: #ff464e;border-radius: 5px;}
+.FlowCon div.check-url span.btn i{display: none;}
+.FlowCon div.check-url span.btn em{display: inline-block;vertical-align: middle;}
+.FlowCon div.check-url span.btn.error i,.FlowCon div.check-url span.btn.right i{height:1.8rem;line-height:1.8rem; margin-right: 0.3rem; display: inline-block;font-size: 0.8rem; vertical-align: middle;}
+.FlowCon div.check-url span.btn.right{background-color: #5fb760;}
+.FlowCon div.check-url {text-align: center;padding-top: 0.3rem;}
+.FlowCon div.storage-img img{max-width: 100%;height: auto;}
+.regist-top { background: none repeat scroll 0 0 #252121; color: #fff; height: 2rem; line-height: 2rem; font-size: 0.6rem; text-align: center; z-index: 1; }
+.change-btn{margin-left:2rem;display:inline-block;vertical-align: middle;font-size: 0.55rem; border-radius: 5px;height: 1.2rem;line-height: 1.2rem;padding: 0 0.4rem;border: 1px solid #ff464e;color: #ff464e;}
+.change-btn.gray{ border: 1px solid #ddd; color: #bbb;}
+.lh14{line-height:1.4rem;}
+.Flow-success .iconfont{ display: block; color: #4cde26;font-size: 2.5rem;margin-top: 3rem;}
+.Flow-success{text-align: center;color: #333;}
+.Flow-success .green{color: #4CDE26;}
+.Flow-success h2{font-size: 0.75rem;padding: 0.4rem;margin-top: .3rem;}
+.Flow-success p{font-size: 0.6rem;padding:0 .6rem; color: #666; line-height: 1.3rem;}
+.Flow-success img{height: 6rem;width: 6rem;margin-top: 1rem;}
+.Flow-success h3{margin-top: 1rem;font-size: 0.7rem; color: #ff464e;padding: 0.4rem;}
+.jpcopy .jpcopy-btn{text-align: center; display: block;margin:0.4rem auto;width: 6rem;font-size: 0.65rem;background-color: #ff464e;color: #fff;height:1.6rem;line-height:1.6rem;border-radius: 5px;}
+.btn-nofind{ background-color: #ff464e; color: #fff;}
+.check-title { margin: 0.2rem 0;}
+.check-title input{ border: 1px solid #ddd; font-size: 0.55rem; vertical-align: middle; height: 1.5rem; line-height: 1.5rem; width: 9rem; text-indent: 1em;}
+.jp-sl img{ display: inline-block; vertical-align: middle; width:12rem;}
+
+.mg-bd{ background-color: #eee; height: 1px;margin: 0.5rem 0;}
+
+.get-list-btn{ background-color: #ff464e; color: #fff; position: fixed; bottom: 0; right: 0; width: 100%; display: block;}

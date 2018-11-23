@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>账户绑定</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/regist.css"/>
+
+<header class="header regist-top"><i class="arrows" onclick="history.go(-1)"></i>账户绑定</header>
+<div class="content password">
+    <div style="line-height: 1.6rem;background-color:#fff"><span style="margin-left: 2rem;font-weight: bold;font-size: 0.6rem">账户信息</span><span style="font-size: 0.1rem;color: #FF9900">(账户信息必填，银行卡信息与身份证一致)</span></div>
+    <div class="item">
+        <div class="ls" onclick="location.href = '../JpinShopIssue/BindindIdentity.html'">
+                <div id="changenum" class="right">
+                   身份证信息<span style="color: red">未绑定</span><span style="color: #666"></span><i class="ar-rt"></i>
+                </div>
+        </div>
+        <div class="ls">
+                <div id="taobaonum" class="right" onclick="location.href = '../JpinShopIssue/BindindBankCard.html'">
+                    银行卡<span style="color: red">未绑定</span><i class="ar-rt"></i>
+                </div>
+        </div>
+        <div class="ls">
+                <div id="findPass" class="right" onclick="location.href = '../UserAccount/ModifyQQPassword.html'">
+                    QQ号<span style="color: red">未绑定</span><i class="ar-rt"></i>
+                </div>
+        </div>
+    </div>
+    <div style="line-height: 1.6rem;background-color:#fff "><span style="margin-left: 2rem;font-weight: bold;font-size: 0.6rem">账户信息</span><span style="font-size: 0.1rem;color: #FF9900">(任意绑定一个号并通过审核即可完成新手任务)</span></div>
+    <div class="item">
+    <div class="item">
+        <div class="ls" onclick="location.href = '../JpinShopIssue/TaoBaoList.html'">
+                <div id="changenum" class="right">
+                   绑定淘宝账号<span style="color: red">未绑定</span><i class="ar-rt"></i>
+                </div>
+        </div>
+        <div class="ls" onclick="location.href = '../JpinShopIssue/JDList.html'">
+                <div id="taobaonum" class="right">
+                   绑定京东账号<span style="color: red">未绑定</span><i class="ar-rt"></i>
+                </div>
+        </div>
+<!--         <div class="ls">
+                <div id="findPass" class="right">
+                    绑定拼多多账号<span style="color: red">未绑定</span><i class="ar-rt"></i>
+                </div>
+        </div> -->
+    </div> 
+</div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

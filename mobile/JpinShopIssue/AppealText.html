@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>申诉</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <style type="text/css">
+    .wby div img{
+        vertical-align: middle;
+        width: 4.2rem;
+        height: auto;
+        display: inline-block;
+    }
+    </style>
+    <script>
+        var str = window.location.search;
+         var aid = str.replace(/[^0-9]/ig,"");
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/mytryout.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/goods.css"/>
+
+<script type="text/javascript" src="../Scripts/jquery.countdown.js"></script>
+
+<script type="text/javascript" src="../Scripts/uploadimage.js"></script>
+
+<style>
+    .tpsc {
+        min-height: 100px;
+    }
+</style>
+<script src="../Scripts/clipboard.min.js"></script>
+<script type="text/javascript">
+    
+</script>
+<header class="header acct-top" style=""><i class="arrows" onclick="history.go(-1)"></i>申诉</header>
+<div style="height: 2rem;"></div>
+<form id="form" >
+    <div class="baog baogtitle">
+        第一步：选择申诉类型
+    </div>
+   <select id="AppealId" class="auto-input" >
+                <option  value="0">请选择</option>
+                <option  value="商品错误">商品错误</option>
+                <option  value="返款问题">返款问题</option>
+                <option  value="快递问题">快递问题</option>
+                <option  value="其它问题">其它问题</option>
+    </select>
+    <div class="baog">
+        第二步：填写申诉说明并添加图片
+    </div>
+    <div class="text">
+        <textarea class="wby wbyd" id="comment" name="sk_comment" datatype="*1-4000" ></textarea>
+        <input type="hidden" id="sk_comment" name="sk_comment" />
+    </div>
+    <style>
+        .jpcopy .jpcopy-btn{text-align: center; display: block;margin:0.4rem auto;width: 6rem;font-size: 0.65rem;background-color: #ff464e;color: #fff;height:1.6rem;line-height:1.6rem;border-radius: 5px;}
+        div.warn{ font-size: 0.55rem; color: #636363;font-size: 0.5rem;overflow:hidden;border: 1px solid #fef0f1;background-color:#fef0f1;line-height: 1.3rem;height: 1.3rem;text-align: center; margin:0 0.3rem;}
+
+        div.warn i{ display: inline; color: #ff464e; font-size: 0.6rem; line-height: 1.3rem; margin-right: 0.3rem;}
+    </style>
+ 
+        <div class="text">
+            <div style="text-align: center;" class="wby wjsc">
+                <div id="uploadbtn1">
+                    <img  class="kwdlt" src="../Content/images/JPin/up-img.png">
+                </div>
+            </div>
+        </div>
+
+   
+
+    <div class="baseaa">
+        <div class="xd">
+
+                <div class="owndd zt-red-btn" onclick="payform()">
+                    提交
+                </div>
+                <br />
+                <div class="oo countdown" endtime="2018/6/6 9:54:07">
+                </div>
+        </div>
+    </div>
+    <input type="hidden" name="sk_id" value="0" />
+    <input type="hidden" name="sk_order_id" value="7210145" />
+    <input type="hidden" id="imgs" name="imgs" />
+    <input type="hidden" id="descs" name="descs" />
+    <input type="hidden" id="imgs1" name="imgs1" />
+    <input type="hidden" id="descs1" name="descs1" />
+    <input type="hidden" id="imgs2" name="imgs2" />
+    <input type="hidden" id="descs2" name="descs2" />
+    <input type="hidden" id="imgs3" name="imgs3" />
+    <input type="hidden" id="descs3" name="descs3" />
+</form>
+ <form id="pic5" action="http://api.feizhugou.com/upload" onsubmit="return onsub5()" target="_blank"  method="post" enctype="multipart/form-data">
+            <input type="file" id="file" name="file" onchange="c5()" style="display:none"/>
+            <button id="paybtn5"></button>
+        </form>
+        <form id="pic5"  action="http://api.feizhugou.com/upload" onsubmit="return onsub6()" target="_blank"  method="post" enctype="multipart/form-data">
+            <input type="file" id="file1" name="file" onchange="c6()" style="display:none"/>
+            <button id="paybtn6"></button>
+        </form>
+<div>
+    <form id="pic4"  action="http://api.feizhugou.com/upload" onsubmit="return onsub4()" target="_blank"  method="post" enctype="multipart/form-data">
+        <input type="file" id="file4" name="file" onchange="c4()" style="display:none"/>
+        <button id="paybtn4"></button>
+    </form>
+     <form id="pic6" action="http://api.feizhugou.com/upload" onsubmit="return onsub6()" target="_blank"  method="post" enctype="multipart/form-data">
+        <input type="file" id="file6" name="file" onchange="c6()" style="display:none"/>
+        <button id="paybtn6"></button>
+    </form>
+</div>
+<script type="text/javascript">
+    var inputtxt1 =0;
+    var inputtxt2 =0;
+    $('#uploadbtn1').on('click',function(){
+        $('#file4').click();
+    })
+    var boolans = 0;
+    function onsub4(){
+        $('#pic4').ajaxSubmit(function(data){ 
+            if(data.code==1000){
+                 var pic4 = data.data;  
+                 localStorage.setItem('pic4',pic4);
+                 boolans =1;
+            }else{
+                myAlert(data.msg)
+                boolans=0;
+            }
+        });
+        return false;
+    }
+    function c4(){
+         var r= new FileReader();
+              f=document.getElementById('file4').files[0];
+               
+              r.readAsDataURL(f);
+              r.onload=function (e) {
+                var src4 = ''+ this.result;
+                $('#uploadbtn1').html('<img  src="'+src4+'" />')
+                    $('#paybtn4').click();
+              };
+     } 
+     function payform(){
+        if($('#AppealId').val()==0){
+            myAlert('申诉类型未选择');
+        }else if($('#comment').val().length<=1){
+            myAlert('申诉说明未填写');
+        }else if(boolans != 1){
+             myAlert('截图未上传');
+        }else{
+             $.ajax({
+                url:"http://api.feizhugou.com/order/step/three",
+                dataType:'json',
+                async:true,
+                data:{
+                    aid:aid,
+                    title:$('#sk_title').val(),
+                    comment:$('#comment').val(),
+                    commentPic:localStorage.getItem('pic4'),
+                    treasurePic:localStorage.getItem('pic6'),
+                },
+                type:'POST',
+                success:function(data){
+                    if(data.code ==1000){
+                        location.href = '../JpinShopIssue/List.html';
+                    }else{
+                        alert(data.msg);
+                    }
+                }
+            })
+        } 
+     }
+</script>
+<script type="text/html" id="writeOrder">
+    <form id="formorder" action="/MyTryout/WriteOrderSubmit" method="POST">
+         <div class="improve">
+            订单号操作<span class="close-layer iconfont icon-error1" onclick="layer.closeAll()"></span>
+        </div>
+        <div class="drh">
+            禁止填写虚假订单号，活动返款后禁止在淘宝退款，违者将罚没账户资金并封号
+        </div>
+        <input type="hidden" name="sk_id" value="7210145" />
+        <div class="magr">
+            <div class="drh" style="margin-top: 0px; color: #f35b51; ">
+                到淘宝后台复制订单编号（如遇特殊订单号无法填写，订单号前面补充0，或删除前面内容，保留15位数字即可）
+            </div>
+            <input type="text" style="text-indent: 1em;"  value="165981239213286395" name="sk_tb_ordercode" class="wby wbyd ssb" datatype="order" placeholder="请填写9/10/11/13/15/16/28位数字"></input>
+        </div>
+        <div class="confirm-btn btn" onclick="$('#formorder').submit();">
+            提交
+        </div>
+    </form>
+</script>
+<script type="text/html" id="message">
+    为了给广大用户带来更好的试用体验，飞猪购手机端系统正在升级，暂无法提交试用报告，请在电脑或手机上登录飞猪购www.meilipa.com进行操作，预计在4月10号晚上6点完成升级，对您造成的麻烦我们深感抱歉
+    <div class="own" onclick="layer.closeAll() ">
+        确定
+    </div>
+</script>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

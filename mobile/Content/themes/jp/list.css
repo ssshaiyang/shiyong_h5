@@ -1,0 +1,50 @@
+.jp-hd{background-color:#fff; padding: 0.5rem 0 0; height: 1.45rem;border-bottom: 1px solid #dedede;}
+.jp-hd li{font-size: 0.55rem; height:0.9rem; line-height:0.9rem; box-sizing: border-box; width: 50%;float: left;text-align: center;border-left: 1px solid #dedede;}
+.jp-hd li:first-child{border: none;}
+.jp-hd li.act a{ border-bottom: 0.15rem solid #ff464e; box-sizing: border-box; height: 1.3rem; display: inline-block;}
+.jp-hd li a{color:#626262;}
+.jp-hd li a span{color: #ff464e;}
+
+.report{background-color: #fef0f1; height: 1.05rem;}
+.report img{ width: 100%; height: auto;}
+
+dl.list dl{ background-color: #f1f4f4;}
+dl.list dd{ position: relative; margin-bottom: 0.4rem;background-color: #fff; font-size: 0.55rem; padding: 0 0.4rem;border-top: 1px solid #dedede;border-bottom: 1px solid #dedede;}
+dl.list dd:first-child{ border-top: none;}
+dl.list dd p.title{ position: relative; color: #636363; border-bottom: 1px solid #dedede; height: 1.4rem; line-height: 1.4rem;}
+dl.list dd p.title span{color: #ff464e;float: right;}
+dl.list dd p.title span.gold-info{ display: block; color: #fc7108; z-index:0; position: relative;}
+dl.list dd p.title span.gold-info .iconfont{ margin-left: 0.15rem;}
+dl.list dd   div.gold-list {display: none;  position: absolute; top: 1.4rem; height:auto; width:100%; z-index: 1101; left: 0; background-color: #fff;}
+
+dl.list dd   div.gold-list div{ position: relative; height: 2.24rem; border: 1px solid #eee; padding:0.3rem 0.5rem; box-sizing: border-box;}
+dl.list dd   div.gold-list div p{ margin-bottom: 0.2rem;}
+dl.list dd   div.gold-list div span{ color: #aaa; font-size: 0.5rem;}
+dl.list dd   div.gold-list div span.gold-num{ color: #fc7108; font-weight: bold; position: absolute; display: block; right: 0.5rem; top: 0;line-height: 2.24rem;}
+dl.list dd   div.gold-list i{ font-size:1rem; position: absolute; top: -0.3rem; line-height: 0.5rem; right: 0.35rem; display: block; color: #fff;}
+
+.gold-warn{ height: 1.3rem; line-height: 1.3rem; text-align: right; font-size: 0.55rem;}
+.gold-warn em{ color: #fc7108;}
+dl.list dd >a{margin: 0.4rem 0; display: block;height: 3.5rem;width: 3.5rem;float: left; position: relative;}
+dl.list dd >a img.gold{ position: absolute; bottom: 0; right: 0; height: 1.36rem; width: 1.36rem;}
+dl.list dd >a img{height: 100%;width: 100%;}
+dl.list dd >ul.item-con{padding: 0.4rem 0 0.4rem 3.9rem; color: #636363; background-color: #fafafa;}
+dl.list dd >ul li{height: 0.875rem;line-height: 0.875rem;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+dl.list dd >ul li:first-child{color: #222;font-size: 0.6rem;}
+dl.list dd >ul li span{margin-right: 0.6rem;color: #ff464e;}
+dl.list dd >ul li em{color: #999;}
+.time{ background-color:transparent;}
+dl.list dd .jp-btn{border-top: 1px solid #dedede; min-height: 1.2rem; padding:0.3rem 0rem; color: #636363;}
+dl.list dd .jp-btn span.time.yello{color: #ff464e;}
+dl.list dd .jp-btn  span.time{color: #ff464e; }
+dl.list dd .jp-btn span.yello{color: #ff464e;}
+dl.list dd .jp-btn span.read{ color: #007AFF;}
+dl.list dd .jp-btn i{ margin-right: 0.15rem; color: #ff464e;}
+dl.list dd .jp-btn .yello{color: #ff464e;}
+dl.list dd .jp-btn .red{color: #ff464e;}
+dl.list dd .jp-btn i{display: inline-block;font-size: 0.55rem; color: #ff464e;}
+dl.list dd .jp-btn a{ margin-left: 0.2rem; color: #fff; background-color: #ff464e;float: right; text-align: center; display: inline-block;height: 1.2rem;line-height: 1.2rem; padding: 0 0.5rem; border-radius: 5px;}
+dl.list dd .jp-btn a.gray{background-color: #ccc;}
+dl.list dd .jp-btn a.white{background-color: #fff;color: #333;}
+dl.list dd .jp-btn a.red-white{ border: 2px solid #ff464e; box-sizing: border-box; background-color: #fff; color: #ff464e;}
+dl.list dd .jp-btn a.red-bd{ border: 1px solid #ff464e; background-color: #fff; color: #ff464e;}

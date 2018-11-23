@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>已完成垫付任务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        if(!localStorage.getItem('token')){
+            location.href = '../UserAccount/Login.html';
+        }
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link href="../Content/themes/jp/list.css" rel="stylesheet" />
+<script src="../Scripts/jquery.infinitescroll.js"></script>
+<script src="../Scripts/jquery.countdown.js"></script>
+<script>
+
+</script>
+<header class="header task-top frv" style="line-height: 2rem;background-color: #FF9900;color: #fff">
+    <i class="arrows" onclick="history.go(-1)"></i>
+    已完成垫付任务
+</header>
+<div style="height: 2rem"></div>
+<!-- <script type="text/javascript" src="../Scripts/listshow.js"></script> -->
+<style type="text/css">
+        .jp-hd li{width: 100%}
+    </style>
+<div id="shadow" style="position: fixed;top: 0;left: 0;display: none; background-color: rgba(0,0,0,0.3);z-index: 1100;height: 100%;width: 100%;">
+    
+</div>
+<dl class="list" id="list">
+</dl>
+<!-- <script type="text/javascript" src="../Scripts/Listdetails.js"> -->
+<!-- </script> -->
+<script src="http://mockjs.com/dist/mock.js"></script>
+<script type="text/javascript">
+ var arr=[
+    {time:'2018.8.29',name:"ceshi",id:'1233',step:'已完成',money:'150.00'},
+     {time:'2018.5.23',name:"ceshi",id:'1233',step:'已完成',money:'150.00'},
+]
+
+Mock.mock('http://www.bai.com','get',function(){
+    return arr;//返回这个数组,也就是返回处理后的假数据
+})
+$.ajax({
+    url:'http://www.bai.com',
+    type:"GET",
+    dataType:'json',
+    success:function(e){
+        for(var i = 0;i < e.length;i++){ 
+         $('#list').append('<dd class="my-list"><a><img src="https://gd3.alicdn.com/imgextra/i4/34203113/TB2a9D.z1uSBuNjSsziXXbq8pXa_!!34203113.jpg_400x400.jpg" alt="加载失败"><div style="position:absolute;left:0;bottom:0;"></div></a><ul class="item-con"><li style="overflow: hidden;border-bottom: 1px solid #dedede"><span class="iconfont icon-tm" style="margin-right:0;"></span>'+e[i].name+'<span style="float:right">'+e[i].time+'</span></li><li></li><li>价值：<span>'+e[i].money+'</span></li><li><em>垫付38.0元</em>平台返款</li></ul><div class="jp-btn clearfix"><span style="line-height: 1.2rem;height: 1.2rem;text-align: right;padding-right: 0.4rem;color: #ff464e">倒计时:01:54:36</span> <a href="javascript:void(1);" style="background-color: #C0C0C0">'+e[i].step+'</a></div></dd>')
+        } 
+        $('#ulilst li:eq(0)').addClass('act');
+    }
+})
+</script>     
+<div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

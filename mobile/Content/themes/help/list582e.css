@@ -1,0 +1,35 @@
+﻿.list-hd a{ border-left: 1px solid #ededed; border-bottom: 1px solid #ededed; display: block; width: 50%; float: left; padding: 0.6rem 0 0.6rem 0.6rem; box-sizing: border-box;}
+.list-hd a img{ height: 1.6rem; width: 1.6rem; display: inline-block; vertical-align: middle;}
+.list-hd p{ color: #333; display: inline-block; vertical-align: middle;}
+.list-hd p *{ display: block; text-align: left;}
+.list-hd p span{ font-size: 0.65rem;}
+.list-hd p  em{ font-size: 0.55rem; color: #999;}
+body{ background: #fff;}
+.list-hd{ height: 5.6rem;}
+
+.ques-list{ height: 1.8rem; overflow: hidden; transition: .3s height ease;-webkit-transition: .3s height;-o-transition: .3s height;}
+.ques-list li{ padding: 0 1rem;box-sizing: border-box; line-height: 1.5rem; border-bottom: 1px solid #eee; font-size: 0.55rem; color: #777;}
+.ques-list li i.icon-Toleft{ display: inline; float: right; color: #777;}
+.ques-list li:first-child{  padding: 0 0.6rem;line-height: 1.8rem; background: #fff; font-size: 0.65rem; color: #000; border: 1px solid #eee;}
+.ques-list li i{ float: left; display: inline; margin-right: 0.3rem;}
+.ques-list.act li:first-child{border-bottom: 1px solid #dedede; background:#EDEFF1;}
+.ques-list li:last-child{ border: none;}
+
+
+#list-con {  overflow: hidden;}
+#list-answer{ z-index: 1000; overflow: hidden; display: none;  width: 100%; background-color: #ffffff;} 
+#list-answer >i{ float: right; font-size: 0.8rem; color: #333; margin-top:0.8rem; margin-right: 0.8rem;}
+#list-answer .con{ text-align: justify; font-size: 0.6rem; padding: 2rem 0.6rem; font-size: 0.6rem; line-height: 0.9rem;}
+ .return{ display: block; height:2rem; background: #ff464e; position: fixed; bottom: 0; width: 100%; left: 0; color: #fff; text-align: center; text-align: center; line-height:2rem;}
+ .return i{ display: inline; margin-right: 0.3rem;}
+ .return div{ display: none;}
+ .return div.act{ display: block;}
+  .return div a{ display: block;color: #fff;}
+  .return.block{ display: block;}
+#list-answer .con p{ margin-bottom: 0.2rem;}
+
+
+.art img{ width: 100%; height: auto;margin-bottom: 1rem;}
+
+.art-bottom img{ width: 100%; height: auto; margin-bottom: 0;}
+.art-bottom{ position: fixed; bottom: 0; width: 100%; height: 2.04rem; overflow: hidden; left: 0;}

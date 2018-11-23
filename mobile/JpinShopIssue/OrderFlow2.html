@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>操作任务</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        if(localStorage.getItem('token')){
+            var valToken = localStorage.getItem('token');
+            $.ajaxSetup({
+           headers: { 'Accept': 'aplication/json','Authorization':''+ valToken }
+            });
+            $.ajax({
+                url:"http://api.feizhugou.com/users",
+                dataType:'json',
+                async:true,
+                type:'GET',
+                success:function(data){
+                    console.log(data);
+                    if(data.code != 1000){
+                        localStorage.removeItem('token');
+                        location.href ='../UserAccount/Login.html';
+                    }
+                }
+            })
+        }else{
+          myAlert("请登录");
+            location.href ='../UserAccount/Login.html';
+        }
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link href="../Content/themes/JPinFlow.css" rel="stylesheet" />
+<script src="../Scripts/uploadimage.js"></script>
+
+<header class="header task-top frv" style="line-height: 2rem;background-color: #FF9900;color: #fff">
+    <i class="arrows" onclick="history.go(-1)"></i>
+    操作任务
+</header>
+    <div style="height: 2rem"></div>
+<div class="Flow">
+   
+    <script type="text/javascript" src="../Scripts/getshops.js"></script>
+    <div class="usera-kong"></div>
+    <div class="Flow-page" style="color: #FF9900">
+            <span>第二步 浏览店铺</span>
+    </div>
+    <div style="margin:0.6rem 0.2rem">淘宝手机单</div>
+    <ul style="width: 100%;overflow: hidden;">
+        <li style="width: 33.33%;text-align: center;float: left;"><img style="width: 80%" src="../Content/images/JPin/up-img.png"><div>店内商品1</div></li>
+        <li style="width: 33.33%;text-align: center;float: left;"><img style="width: 80%" src="../Content/images/JPin/up-img.png"><div>店内商品2</div></li>
+        <li style="width: 33.33%;text-align: center;float: left;"><img style="width: 80%" src="../Content/images/JPin/up-img.png"><div>目标商品头部</div></li>
+        <li style="width: 33.33%;text-align: center;float: left;"><img style="width: 80%" src="../Content/images/JPin/up-img.png"><div>目标商品尾部</div></li>
+    </ul>
+    <div style="width: 90%;text-align: center;margin: 1rem auto;background-color: #fff;line-height: 2rem">图片上传</div>
+    
+</div>
+<script>
+     var str = window.location.search;
+     shoaid= str.replace(/[^0-9]/ig,"");
+    $.ajax({
+        url:"http://api.feizhugou.com/order/get/two/"+aid,
+        dataType:'json',
+        async:true,
+        type:'GET',
+        success:function(data){
+            console.log(111);
+            console.log(data);
+            $('#taobaoid').html(''+data.data.taobao);
+            $('#shopimpname').html(''+data.data.keywords)
+        }
+    })
+    function replaceAll(str) {
+        if (str != null)
+            str = str.replace(/从/g, "");
+        return str;
+    }
+
+    function updateUrl(url,key){
+        var key= (key || 't') +'=';  //默认是"t"
+        var reg=new RegExp(key+'\\d+');  //正则：t=1472286066028
+        var timestamp=+new Date();
+        if(url.indexOf(key)>-1){ //有时间戳，直接更新
+            return url.replace(reg,key+timestamp);
+        }else{  //没有时间戳，加上时间戳
+            if(url.indexOf('\?')>-1){
+                var urlArr=url.split('\?');
+                if(urlArr[1]){
+                    return urlArr[0]+'?'+key+timestamp+'&'+urlArr[1];
+                }else{
+                    return urlArr[0]+'?'+key+timestamp;
+                }
+            }else{
+                if(url.indexOf('#')>-1){
+                    return url.split('#')[0]+'?'+key+timestamp+location.hash;
+                }else{
+                    return url+'?'+key+timestamp;
+                }
+            }
+        }
+    }
+   
+    var id='7210145';
+    var flag = false;
+    
+    var chatType = 'False';
+    $(function() {
+        bindUploadImage('.up-chat-img', function (p) {
+            $('.up-chat-img').attr("src", p);
+            $('.up-chat-img').data("src", p);
+        },false,"JpinOrderFlow");
+        
+    });
+
+    function postTDay() {
+        if (!$("img.up-chat-img").data("src") && chatType=="True") {
+            myAlert("您还未上传聊天截图");
+            return false;
+        }
+        
+        var link = '';
+        var arr = $(".goodLink");
+        var reg = /^(http(s)?:\/\/)?\w+(\.\w+)+.*$/;
+        for (var i = 0; i < arr.length; i++) {
+            if (!$(".goodLink").eq(i).val()) {
+                myAlert("请检查第" + (i + 1) + "个是否未填写");
+                return false;
+            }
+            if (i == arr.length-1) {
+                link += replaceAll($(".goodLink").eq(i).val());
+            } else {
+                link +=  replaceAll($(".goodLink").eq(i).val()) + "ん";
+            }
+        }
+        if (flag) {
+            return false;
+        }
+        flag = true;
+        for(var j=1;j<=arr.length;j++){
+            console.log($('#linktxt'+j).val())
+            localStorage.setItem('newPassword_'+j,$('#linktxt'+j).val()); 
+        }
+         location.href='../JpinShopIssue/OrderFlow2.html?id=' + aid;
+    }
+
+</script>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

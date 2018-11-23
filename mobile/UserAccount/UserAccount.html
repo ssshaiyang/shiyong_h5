@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+    <script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<script type="text/javascript" src="../Scripts/views/account.js"></script>
+
+<script type="text/javascript" src="../Scripts/uploadimage.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+<script>
+    $(function () {
+        $(".go-mj").on("touchmove", function (e) {
+            $(".go-mj").css({ "left": (e.originalEvent.changedTouches[0].clientX-25+ "px"), "top": (e.originalEvent.changedTouches[0].clientY-25 + "px") })
+        });
+    })
+</script>
+<style>body{background:#eee;}</style>
+<!-- <div class="selectImg">
+    <h3>点击选择您的头像</h3>
+    <ul>
+    </ul>
+</div> -->
+<div class="usera-index" style="height: 6.5rem">
+    <div class="usera-index-top">
+        <img id="imgPic" src="">
+        <p>
+            <span id="usersId"></span>
+        </p>
+    </div>
+    <div class="h23">
+        <div class="usera-index-footer" onclick="location.href = '../UserAccount/ModifyAlipay.html'">
+            <p>138****0893</p>
+            <div>点击可修改用户名</div>
+        </div>
+        <div class="usera-index-footer" onclick="location.href = '../UserAccount/UserLevel.html'">
+            <p>账号等级L0</p>
+            <div>点击可修改查看用户规则</div>
+        </div>
+    </div> -->
+</div>
+<div class="password">
+    <div class="item">
+        <div class="ls">
+                <div class="right" onclick="location.href = '../UserAccount/AccountSecurity.html'">
+                    <i class="ar-rt"></i>账号绑定<span style="color: #666"></span>
+                </div>
+        </div>
+        <div class="ls">
+                <div class="right" onclick="location.href = '../UserAccount/SetUp.html'">
+                    <i class="ar-rt"></i>设置<span style="color: #666"></span>
+                </div>
+        </div>
+        <div class="ls">
+                <div class="right">
+                    <i class="ar-rt"></i>账号完成率<span style="color: #666"></span>
+                </div>
+        </div>
+        <div class="ls">
+                <div class="right" onclick="location.href='http://xss188.com/static/h5/buyer_guide_pic.html'">
+                    <i class="ar-rt"></i>新手教学<span style="color: #666"></span>
+                </div>
+        </div>
+        <div class="ls">
+                <div  class="right">
+                    <i class="ar-rt"></i>推广赚金<span style="color: #666"></span>
+                </div>
+        </div>
+        <div class="ls">
+                <div  class="right">
+                    <i class="ar-rt"></i>帮助与客服<span style="color: #666"></span>
+                </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // 用户信息
+    // $.ajax({
+    //     url:"http://api.feizhugou.com/users",
+    //     dataType:'json',
+    //     async:true,
+    //     type:'GET',
+    //     success:function(data){
+    //         var username = data.data.username;
+    //         $('#usersId').html(''+username);
+    //         $('#imgPic').attr('src',''+data.data.avatar);
+    //     }
+    // })
+</script>
+<div class="usera-kong"></div>
+<!-- <ul class="help-item">
+    <li onclick="location.href = '../UserAccount/AccountSecurity.html'">
+        <i class="iconfont icon-zhanghuanquan"></i>
+        <p>账户安全</p>
+    </li>
+    <li style="display: none;" onclick="location.href = '/Help/List' ">
+        <i class="iconfont icon-lianxikefu"></i>
+        <p>联系客服</p>
+    </li>
+    <li onclick="location.href = '../More/Feedback.html' ">
+        <i class="iconfont icon-yijianfankui"></i>
+        <p>意见反馈</p>
+    </li>
+    <li style="display: none;" onclick="location.href = '/Help/List' ">
+        <i class="iconfont icon-wenhao"></i>
+        <p>帮助中心</p>
+    </li>
+</ul> -->
+
+<div style="height: 2rem"></div>
+<div id="authentication" class="layermbox layermbox1 layermshow" style="display: none">
+    <div class="laymshade">
+        <div class="popup_rz">
+            <div class="popup_rz_a">
+                <img src="../Content/images/thenti.jpg" />
+            </div>
+            <div class="popup_rz_b">
+                <img src="../Content/images/wxshe.png" />
+                <span>申请无需审核</span>
+            </div>
+            <div class="popup_rz_b">
+                <img src="../Content/images/wxshe.png" />
+                <span>12小时快速返款</span>
+            </div>
+            <div class="popup_rz_b">
+                <img src="../Content/images/wxshe.png" />
+                <span>提现24小时到账</span>
+            </div>
+           
+            <div class="mfei_rz-a">
+                <a href="javascript:" onclick="$('#authentication').hide()">下次再说</a>
+            </div>
+            <a href="javascript:" class="gbinn" onclick="$('#authentication').hide();">
+                <img src="../Content/images/xxgban.png" />
+            </a>
+        </div>
+    </div>
+</div>
+
+        <div style="margin-bottom: 2rem;">
+        </div>
+        <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class="relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+               <a class=" home" href="../JpinShopIssue/MyTask.html">
+                     <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-giftS"></i>已接任务
+                </a>
+                <a class=" daily_task" href="../JpinShopIssue/Appeal.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>申诉中心
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>我的消息
+                </a>
+                <a class="on more" href="../UserAccount/UserAccount.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>个人中心
+                </a>
+            </div>
+        </footer>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

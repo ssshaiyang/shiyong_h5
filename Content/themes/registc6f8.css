@@ -1,0 +1,60 @@
+﻿.lf { float: left; }
+.regist-top { background: none repeat scroll 0 0 #252121; color: #fff; font-size:0.7rem; height: 2rem line-height:2rem; text-align: center; z-index: 1; }
+
+.auto-input, .auto-btn { border-radius: 3px; font-size: 0.65rem; height:2rem; line-height: 2rem;}
+.auto-input { border: 1px solid #d4d4d4; color: #aaa;  font-family: 微软雅黑; height:2rem; line-height:2rem; text-indent: 1em; display: block; width: 100%; box-sizing: border-box; }
+.auto-btn { margin: 0 0.4rem;  background: #ff464e; color: #fff; line-height:2rem; overflow: hidden; text-align: center;cursor: pointer;}
+.regist-content { margin:2.2rem 0.4rem; padding: 1px; }
+.regist-content section { margin: 0.4rem 0; }
+.regist-content section img{ width: 1.4rem; height: 1.4rem; float: right; margin: 0.3rem 0;}
+.auto-btn.bl { width: 35%; }
+.auto-input.it { margin-right: 3%; width: 60%; }
+.auto-input.nw-doit { margin-right: 2%; width: 50%; }
+.verify-num { color: #666; font-size: 18px; text-align: center; width: 100%; }
+.regist-content .forget-password { color: #37a2e7; font-size: 0.65rem; }
+
+.regist-content .no-user{border-top: 1px solid #ddd;width:100%;margin-top:4rem;position:relative;padding-top:0.5rem;}
+.regist-content .no-user .span{ color:#999; position: absolute;top: -0.35rem;width: 4rem;display: block;height: 0.7rem;background: #f5f5f5;text-align: center;left: 50%;margin-left: -2rem;}
+.regist-content .no-user .auto-btn{background:#fff; border:1px solid #ddd; color:#666;height:1.5rem; line-height:1.5rem;}
+
+.ls .right span { float: right; margin-right: 36px; }
+#select_info { font-family: "Microsoft YaHei", "微软雅黑", Simsun, Mingliu, Arial, Helvetica; margin: 70px 11px; }
+#select_info .text { text-align: center; }
+#select_info .text .p { color: #555; font-size: 29px; font-weight: bold; }
+#select_info .text .man { color: #4f94fb; }
+#select_info .text .lady { color: #ff6599; }
+#select_info .text .p2 { color: #777; font-size: 18px; }
+#select_info .select { margin: 62px auto 76px; }
+#select_info .select .man, #select_info .select .lady { width: 50%; }
+#select_info .select .box { border-radius: 5px; color: #fff; font-size: 35px; height: 57px; line-height: 57px; margin: 0 auto; margin-top: 4px; text-align: center; width: 57px; }
+#select_info .select .man .box { background: #4f94fb; }
+#select_info .select .lady .box { background: #ff6599; }
+#select_info .select .icon { background: url(../images/man_lady.png) no-repeat 0 0; background-size: 51px 102px; display: block; height: 51px; margin: 0 auto; width: 51px; }
+#select_info .select .man .icon { background-position: 0 0; }
+#select_info .select .lady .icon { background-position: 0 -51px; }
+#select_info .btn { border-radius: 5px; color: #fff; display: block; font-size: 22px; height: 56px; line-height: 56px; margin-left: 20%; text-align: center; width: 60%; }
+#select_info .slide, #select_info .time .icon, #select_info .location .icon { background: url(../images/slide_point.png) no-repeat; background-size: 227px 20px; display: block; }
+#select_info .slide { height: 20px; margin: 27px auto 0; width: 61px; }
+/*-------------------------------------------------select sex end--------------------------------------*/
+#select_info .text .surprise, #select_info .text .convey { color: #f15b52; }
+#select_info .time, #select_info .location { color: #f15b52; font-size: 18px; margin-top: 42px; text-align: center; }
+#select_info .time .icon { background-position: -192px 0; display: inline-block; height: 20px; vertical-align: middle; width: 20px; }
+#select_info .birthday, #select_info .district { color: #999; font-size: 24px; margin: 59px auto 82px; }
+#select_info .birthday select, #select_info .district select { background: #f9f9f9; border: 1px solid #ddd; border-radius: 5px; color: #666; height: 46px; }
+/*-------------------------------------------------select birthday end-------------------------------------*/
+#select_info .location .icon { background-position: -214px 0; display: inline-block; height: 20px; vertical-align: middle; width: 20px; }
+#select_info .district { text-align: center; }
+#select_info .district select { width: 32%; }
+.ren { border-color: #81cd28; border-style: solid; border-width: 5px; height: 139px; margin: 0 auto; width: 139px; }
+.ren .img { float: right; right: 24px; width: 24px; }
+/*-------------------------------------------------select location end--------------------------------------*/
+.header_one{border-bottom: 1px solid #d4d4d4; position: relative; padding: 0.1rem 0.4rem;}
+.lone{  color: #000;font-size: 0.65rem;line-height: 1.3rem; display: block;}
+.ltow{  color: #999;font-size: 0.6rem;text-align: right; display: block; line-height: 1.4rem;}
+.mt0{ margin-top: 0;}
+
+
+
+
+
+

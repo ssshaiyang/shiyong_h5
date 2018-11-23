@@ -1,0 +1,34 @@
+HTTrack3.48-21+htsswf+htsjava launched on Mon, 21 May 2018 10:19:26 at http://mobile/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+
+(winhttrack -qwC2t%Ps2u1%s%uN0%I0H0%kf2A25000%f#f -F  -%F  -%l "zh, en, *" http://mobile/ -O1 "D:\mobilemlp\mobilemlp" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+
+
+Information, Warnings and Errors reported for this mirror:
+
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+
+	such as username/password authentication for websites mirrored in this project
+
+	do not share these files/folders if you want these information to remain private
+
+
+
+10:19:27	Warning: 	Found for mobile/robots.txt
+
+10:19:27	Warning: 	File has moved from mobile/robots.txt to /Other/Error
+
+10:35:13	Warning: 	Retry after error -4 (Incorrect length (857604 Bytes, 1204134 expected)) at link gd1.alicdn.com/imgextra/i1/2855944838/TB2isPxr1OSBuNjy0FdXXbDnVXa_!!2855944838.jpg (from mobile/)
+
+10:40:13	Warning: 	Retry after error -4 (No data (connection closed)) at link mobile/Content/images/JPin/flow.png (from mobile/)
+
+10:40:41	Warning: 	Retry after error -4 (Incorrect length (660247 Bytes, 1266337 expected)) at link gd1.alicdn.com/imgextra/i1/3323380211/TB2bSctb7UmBKNjSZFOXXab2XXa_!!3323380211.png (from mobile/jing/SecKill)
+
+10:41:45	Error: 	"Not Found" (404) at link mobile/content/images/invitation/invatetion8 - å¤å¶.png (from mobile/Content/themes/invitation.css?fbaf79d231c1607790cc33cc5402476a)
+
+
+
+HTTrack Website Copier/3.48-21 mirror complete in 22 minutes 24 seconds : 292 links scanned, 287 files written (31856441 bytes overall) [31251322 bytes received at 23252 bytes/sec], 994601 bytes transferred using HTTP compression in 32 files, ratio 28%
+
+(1 errors, 5 warnings, 0 messages)
+

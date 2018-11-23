@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../Content/themes/base.css"/>
+    <link rel="stylesheet" type="text/css" href="../../Content/themes/orderDetail.css"/>
+	<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+    <script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    
+    <link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+    <link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+    <style>body{    background: #eee;}</style>
+	 <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style>
+		
+	</style>
+</head>
+
+<body>
+	<header class="header task-top frv" style="line-height: 2rem;background-color: #FF9900;color: #fff">
+        <i class="arrows"  onclick="history.go(-1)"></i>
+        手机淘宝任务
+    </header>
+    <div class="orderdetail-index">
+		<div class="orderdetail-index-head">
+			<div class="orderdetail-index-head-id">商家ID：123123</div>
+			<a class="orderdetail-index-head-skip" href="">如有问题点击联系商家</a>
+            <div class="clear"></div>
+		</div>
+		<div class="orderdetail-index-good">
+			<div class="orderdetail-index-head-good">目标商品</div>
+			<div class="orderdetail-index-head-goodsinfo" >
+				<img src="../../Content/images/example.jpg" style="height: 2.5rem;width: 2.5rem;">
+				<div class="orderdetail-price">商品成交价格：<span style="color: #FF8C00">200</span>元</div>
+				<div class="orderdetail-num">件数和规格：<span style="color: #FF8C00">1</span>件</div>
+			</div>
+		</div>
+
+		<div class="orderdetail-index-body">
+    		<div style="color:#181818;font-size: 0.8rem;padding-left: 0.4rem;">任务状态：待操作<span style="font-size: 0.4rem;color: #FF8C00;float: right;padding-right: 0.3rem;">操作倒计时：01:22:12</span></div>
+    		
+    		<div class="orange paddingleft3rem paddingtop">商家要求：此商家没有额外要求</div>
+    		<div class="orange paddingleft3rem paddingtop">订单留言：发货</div>
+    		<div class="orderdetail-button" style="display:flex;text-align: justify;margin-top: 0.5rem;">
+    			<input type="button"class="orangebtn" onclick="missionOpera()" value="操作任务">
+    			<input type="button"class="orangebtn" onclick="location.href='../JpinShopIssue/AppealText.html'" value="申诉任务">
+    			<input type="button"class="orangebtn" onclick="missionCancel()" value="取消任务">
+    		</div>
+            <div class="orderdetail-flow">
+                
+            </div>
+        </div>
+    </div>
+     <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class="on relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+              <a class=" home" href="../JpinShopIssue/MyTask.html">
+                     <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-giftS"></i>已接任务
+                </a>
+                <a class=" daily_task" href="../JpinShopIssue/Appeal.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>申诉中心
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>我的消息
+                </a>
+                <a class="more" href="../UserAccount/UserAccount.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>个人中心
+                </a>
+            </div>
+        </footer>
+</html>

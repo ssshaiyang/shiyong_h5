@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>账户详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/mytryout.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/regist.css"/>
+
+<script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../scripts/Common.js"></script>
+
+<script>
+    $(function() {
+        var is_error = "False";
+        if (is_error == "True") {
+            myAlert("由于网络原因，该订单暂时无法查看！", function () {
+                history.go(-1)(-1);
+            })
+        }
+    })
+    
+</script>
+<style>
+  .money-hd {padding: 0.6rem;background: #fff;text-align: center;font-size: 0.6rem;color: #000;}
+  
+  html,body{height: 100%;background: #f4f4f4;}
+  .money-hd i{color: #ff464e;display: inline;font-size: 1rem;margin-right: 0.2rem;}
+  .money-hd span{display: block;padding: 0.5rem;text-align: center;font-weight: bold;color: #ff464e;}
+  .money-hd  p{color:#999;}
+  ul{background: #fff;color: #666;}
+  ul li{border-bottom: 1px solid #dedede; padding: 0.5rem 0.6rem;line-height: 0.9rem;}
+  ul li span,ul li div{float: right;color: #000;line-height: 0.9rem;width: 70%;text-align: right;}
+    ul li div{float: none;}
+     ul li div.error {
+        float: none;
+        margin-left: 30%;
+        margin-top: 0.4rem;
+    }
+  ul div em,ul li>span >em{color: #999;}
+    ul li  i.icon-error2{color:#ff464e;display:inline;margin-right:0.2rem;}
+    ul li i.icon-right4 {
+        margin-right: 0.2rem;
+        color: green;
+        display: inline;
+    }
+</style>
+<header class="header acct-top"><i class="arrows" onclick="history.go(-1)(-1) "></i>账户余额</header>
+<div style="height: 2rem;"></div>
+<div class="money-hd">
+    <i class="iconfont icon-jinbi1"></i>交易金额(元)
+    <span id="money"></span>
+    <p id="bollan"></p>
+</div>
+
+<ul>
+    
+        <li>
+            交易方式
+                <span id="paytext1"></span>
+                <div style="clear:both;"></div>
+
+     
+        </li>
+        <li>
+            商品说明<span id="shoptext"></span>
+            <div style="clear:both;"></div>
+        </li>
+        <li>
+            创建时间<span id="starttime"></span>
+            <div style="clear:both;"></div>
+        </li>
+</ul>
+<script type="text/javascript">
+        if(localStorage.getItem('token')){
+            var valToken = localStorage.getItem('token');
+            $.ajaxSetup({
+           headers: { 'Accept': 'aplication/json','Authorization':''+ valToken }
+        });
+        }else{
+            alert('请先登录')
+        }
+        // 账户余额详情
+    var str = window.location.search;
+    var wid= str.replace(/[^0-9]/ig,"");
+    $.ajax({
+        url:"http://api.feizhugou.com/wallet/getTransactionDetail/"+wid,
+        dataType:'json',
+        async:true,
+        type:'GET',
+        success:function(data){
+            var arr = data.data;
+            console.log(arr);
+            if(arr.operation == 1){
+                $('#money').html('-'+arr.amount)
+            }else{
+                 $('#money').html('+'+arr.amount)               
+            }
+            if(arr.status ==0){
+                $('#bollan').html('等待审核');
+            }else if(arr.status ==1){
+                $('#bollan').html('交易成功');
+            }else{
+                $('#bollan').html('交易取消');
+            }
+            $('#paytext1').html(''+arr.type);
+            $('#shoptext').html(''+arr.introduction);
+            $('#starttime').html(''+arr.createTime);
+        }
+    })
+</script>
+        <div style="margin-bottom: 2rem;">
+        </div>
+        <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class=" relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+               <a class=" home" href="../home/list.html">
+                     <i class="iconfont icon-gift"></i><i class="iconfont iconS icon-giftS"></i>免费试用
+                </a>
+                <a class=" daily_task" href="../Invitation.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>分享赚钱
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>试用进展
+                </a>
+                <a class="on more" href="/UserAccount/UserAccount.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>我的
+                </a>
+            </div>
+        </footer>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

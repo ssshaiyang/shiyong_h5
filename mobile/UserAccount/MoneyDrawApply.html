@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>提现</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/mytryout.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/regist.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/goods.css"/>
+
+
+<script>
+    
+</script>
+<link href="../Content/themes/phonegap.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Scripts/md5.js"></script>
+<style>
+    body, html {
+        background: #f4f4f4;
+        height: 100%;
+    }
+
+    .phone-num {
+        line-height: 1.9rem;
+        height: 1.9rem;
+        padding: 0 0.6rem;
+        background: #fff;
+        margin-top: 0.4rem;
+    }
+
+    span.blank {
+        color: #000;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .phone-num i {
+        color: #00a9f1;
+        font-size: 0.7rem;
+        margin: 0 0.6rem 0 1rem;
+    }
+
+    .phone-num * {
+        display: inline;
+    }
+
+    .phone-num .change {
+        float: right;
+        color: #999;
+    }
+
+    p.gray {
+        padding: 0 0.6rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        color: #999;
+    }
+
+    .tx-con {
+        background: #fff;
+        padding: 0.6rem;
+    }
+
+        .tx-con h3 {
+            font-size: 0.6rem;
+            color: #000;
+            padding-bottom: 1.1rem;
+        }
+
+        .tx-con div input {
+            border: none;
+            outline: none;
+            padding-left: 1em;
+        }
+
+        .tx-con #num-price {
+            display: flex;
+            align-content: center;
+            height: 0.8rem;
+            line-height: 0.8rem;
+        }
+
+            .tx-con div span {
+                line-height: 0.8rem;
+                height: 0.8rem;
+                font-size: 0.7rem;
+            }
+
+            .tx-con div input:focus {
+                box-shadow: none !important;
+                border: none !important;
+                outline: none !important;
+            }
+
+        .tx-con p, .tx-con div#show2{
+            padding-top: 0.6rem;
+            border-top: 1px solid #eee;
+            margin-top: 0.5rem;
+            color: #999;
+        }
+
+            .tx-con p span {
+                color: #5d6f97;
+            }
+
+    .text-info {
+        padding: 0.6rem;
+    }
+        .text-info h3 *{display: inline-block;vertical-align: middle;}
+         .text-info p {
+            color: #999;
+            margin-top: 0.5rem;
+            font-size: 0.55rem;
+        }
+
+    .tx-btn {
+        margin: 1.8rem auto 0;
+        font-size: 0.7rem;
+        height: 1.8rem;
+        width: 12rem;
+        display: block;
+        background-color: #ff464e;
+        border: none;
+        color: #fff;
+        line-height: 1.8rem;
+        text-align: center;
+        border-radius: 0.3rem;
+    }
+
+    .text-info h3 {
+        font-weight: 500;
+    }
+
+    .text-info span {
+        color: #999;
+    }
+    .text-info span a{ margin-left: 0.2rem; display: inline-block;vertical-align: middle; border-radius: 2px; background-color: #ff464e; padding: 0 0.3rem; color: #fff;height: 1rem;line-height:1rem;}
+
+
+     #applySuccess {
+        text-align: center;
+    }
+    #applySuccess > i {
+        color: #11b611;
+        margin: 2rem auto 0;
+        font-size: 2.4rem;
+    }
+     #applySuccess > h3{font-weight: 500;height: 1.4rem;line-height: 1.4rem;}
+        #applySuccess > p{color: #999;font-size: 0.52rem;margin-bottom: 3rem;}
+    #applySuccess >a{ border-radius: 0.3rem; display: block; margin: 1rem 0.6rem;height: 2rem;line-height: 2rem;border: 1px solid #ff464e;color: #fff;background:#ff464e;font-size: 0.68rem;}
+        #applySuccess > a:last-child{background: #fff;color: #ff464e;}
+
+    .tx-con div#show2{height: auto;display: none;}
+    .tx-con div#show2 div span{font-size: 0.55rem;}
+    .tx-con div#show2 div *{display: inline-block;vertical-align: middle;height: 0.7rem;line-height: 0.7rem;}
+    .tx-con div#show2 div{line-height: 1.5rem;}
+    .tx-con div#show2 input{margin-right: 0.2rem;}
+    #canUseGold {
+        color: #ff8e1b;
+    }
+</style>
+
+<header class="header acct-top"><i class="arrows" onclick="history.go(-1)(-1) "></i>提现</header>
+<div style="height: 2rem;"></div>
+<form id="apply-con">
+     <input name="password"  style="text-indent: 1em;" id="pwd" type="hidden" class="moneya"/>
+    <div class="phone-num">
+        <span class="blank">银行</span><em id="moneyphone">浙江建设银行 胡** 62177017 4000 7729 827</em> 
+    </div>
+    <!-- <p class="gray">手续费：提现手续费率5%，每笔手续费最低1元。</p> -->
+    <div class="tx-con">
+        <h3>提现金额</h3>
+        <div>
+            <span>本金</span><input type="radio" name="moneyType" value="0">
+            <span>佣金</span><input type="radio" name="moneyType" value="1">
+            <!--  <select id="money" class="auto-input" >
+                <option  value="0">请选择提现金额</option>
+                <option  value="1">提现50金，扣除手续费2金，实际到账48元</option>
+                <option  value="2">提现100金，实际到账100元</option>
+                <option  value="3">提现500金，奖励5金，实际到账505元</option>
+            </select> -->
+            <div style="margin-top:0.6rem">
+                 <span>提现金额：</span><input type="text" id="money" >
+            </div>
+        </div>
+        <input id="moneypassword"  class="auto-input" type="text" placeholder="输入登录密码" datatype="*1-16"/>
+        <!-- <div id="show2">
+            扣除¥<em id="feeSpan">0</em>手续费
+            <div>
+                    <input type="checkbox" id="checkGold" name="exchange" value="0" /><span>使用</span> <span id="canUseGold"></span> <span>金币抵用手续费¥</span> <span id="goldprice"></span>
+            </div>
+            实际到账 ¥<em id="draw">0</em>
+        </div> -->
+
+       <!--金币数 110-->
+            <!-- 是vip-->     
+
+
+
+
+    </div>
+
+    <input type="input" onclick="paymoney()" class="tx-btn" value="确认">
+</form>
+<script type="text/javascript">
+     function paymoney(){
+        if($('#money').val()==0){
+            myAlert('请选择提现金额');
+        }else if($('#moneypassword').val().length<=0){
+            myAlert('登录密码未输入');
+        }else{
+            var password=hex_md5($("#passwd").val())+"";
+            $.ajax({
+                url:"http://xss188.com/rest/users/bankcard/withdraw"+cardId,
+                dataType:'json',
+                data:{
+                    type:
+                    amount:$('#money').val(),
+                    password:password
+                },
+                async:true,
+                type:'POST',
+                success:function(data){
+                    if(data.code == 1000){
+                        location.href ='../UserAccount/MoneyBalance.html'
+                    }else{
+                        myAlert(data.msg)
+                    }
+                },
+            });
+
+        }
+     }
+</script>
+
+<div  id="applySuccess"  style="display: none;">
+    <i class="iconfont icon-righ3"></i>
+    <h3>提现申请成功</h3>
+    <p>1-3个工作日到账（节假日顺延）</p>
+    
+    <a href="/home/list">领取更多免费试用</a>
+    <a href="/UserAccount">我的飞猪购</a>
+</div>
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

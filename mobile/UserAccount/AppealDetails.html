@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../../Content/themes/base.css"/>
+    <link rel="stylesheet" type="text/css" href="../../Content/themes/orderDetail.css"/>
+	<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../Content/themes/JPinFlow.css">
+    <link rel="stylesheet" type="text/css" href="../Content/themes/jp/list.css">
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+    <script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    
+    <link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+    <link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+    <style>body{    background: #eee;}</style>
+	 <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <style>
+		
+	</style>
+</head>
+
+<body>
+	<header class="header task-top frv" style="line-height: 2rem;background-color: #FF9900;color: #fff">
+        <i class="arrows"  onclick="history.go(-1)"></i>
+        申诉详情
+    </header>
+    <div style="margin-top: 2rem">我发起的申诉</div>
+    <dl class="list" >
+        <dd class="my-list">
+            <a><img src="https://gd3.alicdn.com/imgextra/i4/34203113/TB2a9D.z1uSBuNjSsziXXbq8pXa_!!34203113.jpg_400x400.jpg" alt="加载失败">
+                
+            </a>
+            <ul class="item-con">
+                <li style="overflow: hidden;border-bottom: 1px solid #dedede">
+                    <span style="margin-right:0;color:#C0C0C0">订单编号</span><span style="float:right;color:#C0C0C0">15468247</span>
+                </li>
+                <li style="overflow: hidden;border-bottom: 1px solid #dedede">
+                    <span style="margin-right:0;color:#C0C0C0">QQ号码</span><span style="float:right;color:#C0C0C0">1234567</span>
+                </li>
+                <li style="overflow: hidden;">
+                    <span style="margin-right:0;color:#C0C0C0">其它联系方式申请平台介入提供</span>
+                </li>
+            </ul>
+         </dd>
+     </dl>
+     <div style="width: 90%;margin: 1rem auto;background-color: #FF9900;line-height: 2rem;border-radius: 0.6rem;text-align: center;color: #fff">我不想做了，申请取消这个任务</div>
+    <div class="FlowCon">
+                <ul>
+                    <li id="maindiv" style="padding-bottom: 2rem">
+                        <span class="num"></span><em class="title" style="color: #C0C0C0">申诉内容 2018-8-23 11:20:45</em><br />
+                        <div>
+                           [商品错误]商品找不到
+                        </div>
+
+                    </li>
+                    <li style="border-left: 1px solid #C0C0C0;padding-bottom: 2rem">
+                        <span class="num">2</span><em class="title">核对宝贝</em>
+                           
+                    </li>
+                    <li >
+                        <span class="num">3</span><em class="title">已完结</em>
+                    </li> 
+                </ul>
+            </div>
+     <footer class="footer clearfix" style="overflow: hidden;color: #FF9900">
+           <div style="width: 33%;float: left;line-height: 2.15rem;text-align: center;">回复申诉</div>
+           <div style="width: 33%;float: left;line-height: 2.15rem;text-align: center;border-left: 1px solid #C0C0C0">完结申诉</div>
+           <div style="width: 33%;float: left;line-height: 2.15rem;text-align: center;border-left: 1px solid #C0C0C0">申请平台介入</div>
+     </footer>
+</html>

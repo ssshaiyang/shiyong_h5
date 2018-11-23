@@ -1,0 +1,19 @@
+body{ background-color: #fff;}
+.Flow-hd{ background-color: #fafafa; padding: 0.2rem 0.4rem 0.4rem;font-size: 0.55rem;border-bottom: 1px solid #dedede;}
+.Flow-hd img{height:4.8rem;width: 4.8rem;float: left;}
+.Flow-hd ul{margin-left: 5.2rem;line-height: 1.2rem;}
+.Flow-hd ul li{ font-size: 0.6rem; border-top:1px solid #dedede;height: 1.2rem;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+.Flow-hd ul li:first-child{border-top: none;}
+.Flow-hd ul li.gray{ color: #999;}
+.flow-num{ margin: 0.4rem 0.4rem 0; height:1.4rem; line-height: 1rem; border-bottom: 1px solid #dedede;}
+.flow-item{ padding:0 0.4rem;border-bottom: 1px solid #dedede;border-top: 1px solid #dedede;}
+.flow-item p{ height: 1.6rem; line-height: 1.6rem; border-bottom: 1px solid #dedede;}
+.flow-item  div{ height:2rem; line-height:2rem; }
+.flow-item  div *{ display: inline-block; vertical-align: middle; color: #999;}
+.flow-item  div span.btn{ width: 4rem; color: #fff; float: right; border: 1px solid #ff464e; background-color: #ff464e; box-sizing: border-box; height: 1.4rem; line-height: 1.4rem; margin-top: 0.3rem;}
+.flow-item  div span.gray{  background-color: #bbb; border: 1px solid #bbb;}
+.flow-item  div span.red-white{ border: 2px solid #ff464e; box-sizing: border-box; background-color: #fff; color: #ff464e;height: 1.4rem; line-height: 1.2rem;}
+.flow-item  div i{ font-size: 0.55rem; margin-right: 0.2rem;}
+iframe{ border: none; outline: none; height: 12rem; width: 100%;}
+
+

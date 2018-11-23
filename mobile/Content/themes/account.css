@@ -1,0 +1,89 @@
+.user-top { background: none repeat scroll 0 0 #201c1c; height: 3.6rem; z-index: 1; }
+.user-top .pic { height: 1rem; width: 1rem; position: relative; vertical-align: middle; }
+.user-top .user-head { height:2.4rem; width:2.4rem; margin:0.6rem 0.4rem; background: url("../images/truth_face.jpg") no-repeat scroll rgba(0, 0, 0, 0); border-radius: 50% }
+.user-top .over-shade { height: 1rem; width: 1rem; z-index: 1; }
+
+.user-top .msg { color: #fff; font-size: 0.7rem; margin-left: 3rem; line-height: 3.6rem;}
+.user-top .msg.no { margin-top:44px; }
+.user-top .msg.no span { color: #bbb; font-size: 14px; }
+.prize{ float: right; font-size: 19px; cursor: pointer;
+         width: 116px; background-image: url(/Content/images/yjiangyqi.png);
+         background-repeat: no-repeat; text-align: right;margin-right: 15px;
+         background-size: 29px 23px;background-position: 8px 1px;           
+}
+.prize a{color: #ecdb6c;display: block}
+.sfrzheng{ font-size: 12px;  padding-left: 12px;padding-top: 10px;position: relative; color: #888888;width: 100%;float: left}
+.sfrzheng img{  position: absolute;top: 10px; width: 18px;height: 14px;}
+.sfrzhenga{ display: block; width: 96px; height: 30px; text-align: center; font-size: 13px; background: #ff464e;
+  top: 3px;right: 7px;position: absolute; color: #ffffff;line-height: 32px; border-radius: 3px;margin-right: 10px}
+.qdaocg{ background: #625e5e;color: #cccccc}
+.content.load { /*margin-top: 110px;*/ }
+.ls .right span { color: #666; float: right; font-size: 17px; margin-right: 36px;}
+.ls span.catch-mny { display: inline-block; font-size: 14px; overflow: hidden; text-align: right; text-overflow: ellipsis; white-space: nowrap;}
+.lg-phone,.lg-wx , .lg-qqld, .lg-rgt, .lg-tks, .lg-tksll, .lg-credit, .lg-alipay, .lg-security, .lg-tryout, .lg-account 
+{ background: url("../images/account.png") no-repeat scroll; background-size: 315px 26px;
+   display: block; left: 0.4rem; position: absolute; top: 14px; }
+.lg-phone { background-position: -24px 0; height: 27px; width: 19px; }
+.lg-wx {background: url("../images/icon/wx.png") no-repeat scroll; background-size: auto 100%;  background-position: center center; height: 20px; width: 20px; }
+.lg-qqld { background-position: -43px 0; height: 23px; width: 22px; }
+.lg-rgt { background-position: -64px 0; height: 23px; width: 23px; }
+.lg-tks { background-position: -101px 0; height: 23px; width: 28px;left: 13px; }
+.lg-tksll{background-position: -272px 0; height: 23px; width: 31px;}
+.lg-credit { background-position: -220px 0; height: 25px; width: 26px;  left: 15px; }
+.lg-alipay { background-position: -154px 0; height: 30px; width: 29px; }
+.lg-security { background-position: -185px 0; height: 27px; width: 23px;  left: 16px; }
+.lg-tryout { background-position: -242px 2px; height: 25px; width: 33px; }
+.lg-account { background-position: -130px 2px; height: 25px; width: 27px;  left: 13px; }
+.lg-tksllone{background-size: 25px 22px; display: block; left: 14px; 
+             position: absolute; top: 14px; background-image: url(/Content/images/wodzyongj.png);
+             height: 33px; width: 30px;background-repeat: no-repeat}
+.lg-creditone{background-size: 20px 20px; display: block; left: 15px; 
+             position: absolute; top: 15px; background-image: url(/Content/images/wodjbi.png);
+             height: 33px; width: 30px;background-repeat: no-repeat}
+
+.lingla_qdao{ height: 36px; background-color: #3a3333;  position: fixed; width: 100%;  z-index: 999;}
+
+.lg-sect{ background: url("/Content/images/footer_i.png") no-repeat;height: 33px; width: 30px;background-size: 38px 40px;display: block;position: absolute;left: 10px;top: 5px;}
+
+
+.login-hd{}
+/* .header.task-top{ background: #fff; box-shadow: 0 0 0.2rem #aaa; color: #000;} 
+.header.task-top>i{ color: #000; font-size: 0.7rem;} */
+.header .righthot{ padding-right: 0.4rem;}
+.header.task-top a{ color: #ff464e;}
+.login{ text-align: center;}
+.login >img{ height: 3.3rem; width: auto; display: block; margin: 1.8rem auto;}
+body,html{ height: 100%; width: 100%; background: #fff;}
+.login .item{ position: relative; text-align: left; margin: auto 0.6rem; border: none; border-bottom: 1px solid #dedede; padding: 0.75rem 0.4rem;}
+.login .item input{ border: none; outline: none; width: 8rem;}
+.login .item input:focus{ border: none  !important; box-shadow: none !important; outline: none;}
+.login .item >*{ display: inline-block; vertical-align: middle;}
+.login .item i{ font-size: 0.7rem; color: #000; margin-right: 0.4rem;}
+.login .item .warn{ color: #ff464e;}
+.login .item .right{ color: #24c74e;}
+.login .btn{ line-height: 1.9rem; display: block; background-color: #24c74e; color: #fff; height: 1.9rem; border-radius: 0.95rem; margin: 0 0.6rem 0.6rem; }
+.login .btn.gray{ background: #e6e3e6; margin-top: 1.1rem;}
+.login .btn i{ font-size: 0.75rem; margin-right: 0.3rem; display: inline;}
+
+.login .btn.red{ background: #ff464e; margin-top: 1.1rem;}
+.login >a{ color: #b3b3b3;}
+
+.btn-warn{ box-sizing: border-box; padding: 0 0.3rem; display: inline-block; position: absolute; height: 1.2rem; line-height: 1.2rem; border: 1px solid #ff464e; border-radius: 0.6rem; right: 0.4rem; top: 50%; margin-top: -0.6rem;}
+.bindwx h2{ padding: 1.5rem 0 2rem; text-align: center; font-size: 0.8rem; font-weight: 500;}
+.bindwxImg img{ width: 10rem; height: auto;}
+.bindwxImg{ text-align: center;}
+.bindwxImg p *{ display: block; width: 50%; float: left; text-align: center;}
+.bindwxImg p{ padding:0.5rem 0 4rem;}
+.header.task-top .icon-Toright{ position: absolute; left: 0.4rem;}
+.commission{font-size:0.7rem;margin-top: 0.5rem;}
+.principal{font-size:0.7rem;margin-top: 0.5rem;}
+.commission-money{font-size: 1.2rem;margin-top: 0.4rem;}
+.principal-money{font-size: 1.2rem;margin-top: 0.4rem;}
+.newband{background-color:#fff;}
+.newbanditem{margin:0.3rem;padding-top:0.5rem;padding-bottom:0.5rem;font-size: 0.7rem;border-bottom: 1px solid #dedede; }
+.newbandfont{font-size: 0.5rem;color:#696969;}
+.bottombutton{height:1.2rem;width:1.2rem;position:absolute;background-color: #5CACEE;border-radius:50%;padding: 0.5rem;color: #fff;margin:0;line-height:1.2rem;left: 50%;right:50%;margin-left:-0.7rem;bottom: 35%}
+
+.bottombutton:focus{
+	outline: none;
+}

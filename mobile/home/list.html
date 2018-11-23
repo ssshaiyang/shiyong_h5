@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>免费试用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/basee721.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfontfc6d.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/styled796.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.345ba.js"></script>
+<script type="text/javascript" src="../Scripts/Common73d4.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont39ba.css" />
+    <script>
+        var shopid ='';
+        var arr = null;
+        var id = null;
+        var loc = window.location.href;
+        var arr = loc.split('?')[1];
+        if(arr!=null){
+             id = arr.split('=')[1];
+        }
+        var searchshopname =''; 
+        var n1 = loc.length;
+        var n2 = loc.indexOf("&");
+        if(id!= null){
+            shopid = id;
+        }
+        if(n2 >0){
+             var searchshopnames = decodeURI(loc.substr(n2+1, n1-n2));
+            searchshopname = ''+searchshopnames;
+        }
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link href="../Scripts/swiper/css/swiper.min.css" rel="stylesheet" />
+<script src="../Scripts/swiper/js/swiper.min1172.js"></script>
+<script src="../Scripts/jquery.infinitescroll1172.js"></script>
+<!-- <script src="../Scripts/vue1172.js?v=0901"></script> -->
+<script src="../Scripts/jquery.lazyload1172.js"></script>
+<script>
+    var order = 2;
+</script>
+<link rel="stylesheet" type="text/css" href="../Content/themes/jp/indexf986.css"/>
+
+<!-- <script type="text/javascript" src="../PageScript/home/list667c.js?6dfc0211d88bd0369b0370ed723489af"></script> -->
+
+<script>
+    var isNewUser = "True";
+    var userid = 0;
+    var myGold = "0";
+    var sortY='2';
+    var showZt = 'True';
+    $(function() {
+        var $window = $(window);
+        var $document = $(document);
+        $window.scroll(function() {
+            
+            if ($document.scrollTop() > 300) {
+                $(".gold-cat").addClass("act");
+            } else {
+                $(".gold-cat").removeClass("act");
+            }
+        });
+    })
+</script>
+<a class="go-mj" style="display: none;" href="../other/appdownload.html">
+    <img src="../Content/images/icon/share-icon.png" alt="加载失败">
+</a>
+<div id="fixed-top" class="jp-fixed-top" style="border-bottom: 1px solid #ddd;height: auto;">
+    <div class="jp-hd">
+        <a href="../UserAccount/Login.html">
+            <i class="iconfont icon-xianshangchongzhi" style="font-size: 0.89rem;color: #a5a5a5;"></i>
+        </a>
+        <div>
+            <input id="searchbao" placeholder="搜索你喜欢的宝贝" type="text" class="search-input" />
+            <span id="searchtext" class="iconfont icon-search"></span>
+        </div>
+         <i class="iconfont icon-sign" onclick="location.href='../UserAccount/Login.html?type=1'"></i>
+    </div>
+    <script type="text/javascript">
+        if(searchshopname !=''&& searchshopname!=null){
+            $('#searchbao').attr('value',''+searchshopname)
+        }
+        $('#searchtext').on('click',function(){
+            searchshopname = $('#searchbao').val();
+            start();
+        })
+    </script>
+    <div class="jp-cat-bg">
+        <div class="jp-cat">
+            <ul id="ulheader">
+                <li>
+                    <a onclick="listindex()" class="lia act">全部</a>
+                </li>
+                   
+            </ul>
+        </div>
+    </div>
+    <div class="plat" style="background: #f5f5f5;">
+        <div class="div-container" style="width: 19.5rem;">
+            <span class="act" data-num="0">全部</span>
+            <span class="" data-num="1">组团开奖</span>
+            <span class="" data-num="5">90%中奖率</span>
+            <span class="" data-num="3">京东</span>
+            <span class="" data-num="4">赏金任务</span>
+            <span class="" data-num="2">高价值</span>
+
+        </div>
+    </div>
+</div>
+<div id="index">
+    <div style="height:5.3rem;background: #f5f5f5;"></div>
+    <div class="jp-con" id="goods" style="border:none;">
+        <ul class="con-cat">
+            <li class=""><a data-href="0">最新<i class="iconfont icon-sortD"></i></a></li>
+            <li class=""><a data-href="1">价值<i class="iconfont icon-sortD"></i></a></li>
+            <li class="act"><a data-href="2">人气<i class="iconfont icon-sortD"></i></a></li>
+        </ul>
+        <ul class="jp-list" id="list">
+            
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+            var shopsname = 'all';
+            function listindex(){
+                var lialength = $('.lia').length;
+                for(var z = 0;z<lialength;z++){
+                        $('.lia:eq('+z+')').removeClass('act');
+                    }
+                 $('.lia:eq(0)').addClass('act');
+                 shopsname = 'all';
+                 allstart();
+            }
+             function runid(s,x){
+                shopid =x+1;
+                var lialength = $('.lia').length;
+                $('.lia:eq(0)').addClass('act');
+                if(shopid!=null &&shopid!=''){
+                     for(var z = 0;z<lialength;z++){
+                            $('.lia:eq('+z+')').removeClass('act');
+                        }
+                        $('.lia:eq('+shopid+')').addClass('act');
+                        $.ajax({
+                            url:"http://api.feizhugou.com/activity/goodsClassify",
+                            dataType:'json',
+                            async:true,
+                            type:'GET',
+                            success:function(data){
+                                var arrs1 = data.data;
+                                var  shopid2 = shopid -1;
+                                if(shopid!=null){
+                                    if(arrs1[shopid2].name != null){
+                                        shopsname = arrs1[shopid2].name;
+                                        $('#list li').remove();
+                                        start();
+                                    }else{
+                                        $('#list li').remove();
+                                    }
+                                }
+                            }
+                        });
+                    }
+            }         
+            $.ajax({
+                url:"http://api.feizhugou.com/activity/goodsClassify",
+                dataType:'json',
+                async:true,
+                type:'GET',
+                success:function(data){
+                    var arrs1 = data.data;
+                    console.log(arrs1)
+                        for(var x = 0;x <arrs1.length;x++){
+                            $('#ulheader').append('<li><a class="lia" onclick="runid('+arrs1[x].id+","+x+')" class="">'+arrs1[x].name+'</a></li>');
+                            if(shopid!=null &&shopid!=''){
+                                var shopid1 = shopid -1;
+                                shopsname = arrs1[shopid1].name;
+                            }
+                        }
+                      var lialength = $('.lia').length;
+                      if(shopid!=null && shopid!=''){
+                        for(var z = 0;z<lialength;z++){
+                                $('.lia:eq('+z+')').removeClass('act');
+                        }
+                        $('.lia:eq('+shopid+')').addClass('act');
+                             allstart();
+                      }else{
+                        for(var z = 0;z<lialength;z++){
+                                $('.lia:eq('+z+')').removeClass('act');
+                        }
+                        $('.lia:eq(0)').addClass('act');
+                            allstart();
+                      }
+                }
+            });
+            var activityid;
+            function allstart(){
+                $('#list li').remove();
+                 $.ajax({
+                    url:"http://api.feizhugou.com/activity?page=1&limit=20&filter="+searchshopname+"&treasure_class="+shopsname,
+                    dataType:'json',
+                    async:true,
+                    type:'GET',
+                    success:function(data){
+                            var arrs = data.data.info;
+                            if(data.code == 1000){
+                                if(data.data.info.length > 0){
+                                    for(var i =0;i<arrs.length;i++){
+                                        $('#list').append('<li id="'+arrs[i].id+'" onclick="paytoid(this.id)"><a ><img id="'+arrs[i].id+'" onclick="paytoid(this.id)"  class="lazy" src="'+arrs[i].imgUrl+'"  alt="加载失败" /><div><span class="red">首单99%中奖</span></div></a><p><span class="iconfont icon-tb"></span>'+arrs[i].title+'</p><div class="jp-num"><span>¥'+arrs[i].treasure_price+'</span><span>'+arrs[i].applyNum+'人申请</span></div><div class="jp-btn"><a class="tbn tod" id="'+arrs[i].id+'" onclick="paytoid(this.id)"">免费申请</a></div></li>')
+                                    }
+                                }
+
+                            }else{
+                                myAlert(data.msg)
+                            }
+                        }
+                    })
+
+            } 
+            function start(){
+                $('#list li').remove();
+                $.ajax({
+                url:"http://api.feizhugou.com/activity?page=1&limit=20&filter="+searchshopname+"&treasure_class="+shopsname,
+                dataType:'json',
+                async:true,
+                type:'GET',
+                success:function(data){
+                        var arrs = data.data.info;
+                        if(arrs.length > 0){
+                                for(var i =0;i<arrs.length;i++){
+                                    $('#list').append('<li  id="'+arrs[i].id+'" onclick="paytoid(this.id)"><a ><img id="'+arrs[i].id+'" onclick="paytoid(this.id)"  class="lazy" src="'+arrs[i].imgUrl+'"  alt="加载失败" /><div><span class="red">首单99%中奖</span></div></a><p><span class="iconfont icon-tb"></span>'+arrs[i].title+'</p><div class="jp-num"><span>¥'+arrs[i].treasure_price+'</span><span>'+arrs[i].applyNum+'人申请</span></div><div class="jp-btn"><a class="tbn tod" id="'+arrs[i].id+'" onclick="paytoid(this.id)"">免费申请</a></div></li>')
+                                }
+                        }else{
+                            // console.log(1);
+                        }
+                    }
+                })
+            }       
+             function toIndex(){
+                $('#fixed-top').css('display','block');
+                $('#index').css('display','block');
+                $('#footerhide').css('display','block');
+                $('#info-foot').css('display','none');
+                $('#detail').addClass('showHidden')
+             }
+        </script>
+<div id="detail" class="fix-detail showHidden" >
+    <div class="toback to-index" onclick="toIndex()">
+        <i class="iconfont icon-back1"></i>
+    </div>
+    <div id="swiper2" class="swiper-container" >
+        <div class="swiper-wrapper" id="shopic">
+            <!-- <div class="swiper-slide">
+                <img id="shoppic" src="" alt="加载失败">
+            </div>
+            <div class="swiper-slide">
+                <img v-bind:src="logo_pic2" alt="加载失败">
+            </div>
+            <div class="swiper-slide">
+                <img v-bind:src="logo_pic3" alt="加载失败">
+            </div>
+            <div class="swiper-slide">
+                <img v-bind:src="logo_pic4" alt="加载失败">
+            </div> -->
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+<script type="text/javascript">
+     function paytoid(d){
+                activityid = d;
+                $('#fixed-top').css('display','none');
+                $('#index').css('display','none');
+                $('#footerhide').css('display','none');
+                $('#info-foot').css('display','block');
+                $('#detail').removeClass('showHidden')
+                $.ajax({
+                    url:"http://api.feizhugou.com/activity/" + activityid,
+                    dataType:'json',
+                    async:true,
+                    type:'GET',
+                    success:function(data){
+                       console.log(data.data.imgInfo[0].imgUrl);
+                       $('#shop_name').html(data.data.title);
+                       $('#shop-money').html(data.data.treasure_price);
+                       $('#shop-copies').html(data.data.surplusNum+ '/'+data.data.totalNum +'  份');
+                       $('#listpeople1').html(data.data.applyNum + '人已申请');
+                       $('#listpeople2').html(data.data.luckyNum + '人已中奖');
+                       console.log(data.data.imgInfo.length)
+                       for(var i=0;i<data.data.imgInfo.length;i++){
+                        console.log(i)
+                            $('#shopic').append('<div class="swiper-slide"><img src="'+data.data.imgInfo[i].imgUrl+'" alt="加载失败"></div>')
+                       }
+                       // $('#shoppic').attr('src',''+data.data.imgInfo[0].imgUrl);
+                    }
+                })  
+             }
+             var mySwiper = new Swiper ('.swiper-container', {
+                     mode:'horizontal',
+                loop : true,
+
+
+                onSlideChangeStart:function(){
+                    var index = swiper.activeIndex;
+                    if(swiper.activeIndex == 4){
+                        index = 1;
+                    }
+                    if(swiper.activeIndex == 0){
+                        index = 3;
+                    }
+                   
+                    $('.publicUl li').removeClass('active');
+                    $('.publicUl li')[index].className='active';
+                    console.log(index);
+                    // alert(swiper.activeIndex);
+                }
+                })
+</script>
+    </div>
+    <div class="info-hd" >
+        <p class="title">
+            <span class="name" id="shop_name" style="">111</span>
+            <em >券</em>
+            <em>花呗</em>
+            <em>白条</em>
+            <em>信用卡</em>
+        </p>
+        <span>价值 <em id="shop-money"></em></span>
+
+        <span>剩余<span id="shop-copies"></span></span>
+    </div>
+    <div class="not-area" v-if="sk_nondelivery_area">
+        <span class="iconfont icon-zhu-copy icon"></span>
+        <span class="not-area-title">以下地区不发货，请勿申请</span>
+        <i class="iconfont icon-Toleft" style="float:right"></i>
+    </div>
+    <ul class="info-num">
+        <li>
+            <span id="listpeople1"></span>
+        </li>
+        <li>
+            <span id="listpeople2"></span>
+        </li>
+    </ul>
+    <div class="usera-kong"></div>
+    <div class="info-cat">
+        <span class="act">商品详情</span>
+        <span>猜你喜欢</span>
+    </div>
+    <div class="info-list">
+        <div class="act  jp-con">
+            <div class="intro">
+            </div>
+            <div id="guss-like">
+                <div>
+                    <i class="iconfont icon-xin"></i><span>猜你喜欢</span>
+                </div>
+            </div>
+            <ul id="list-apply1" class="jp-list"></ul>
+            <div class="get-more" id="get-more">
+                <a href="list3da1.html?orderType=5">加载更多</a>
+            </div>
+        </div>
+        <div class="jp-con">
+            <ul id="list-apply" class="jp-list"></ul>
+            <div class="get-more">
+                <a href="list3da1.html?orderType=5">加载更多</a>
+            </div>
+        </div>
+    </div>
+    <div class="flow-con" id="flow2">
+        <div class="code-con">
+            <div class="dona-bottom">
+                <h1 style="font-size:0.7rem; margin:1.3866rem 0; text-align:center;font-weight: 600;">温馨提示</h1>
+                <div class="not-area-tips">
+                    <h2 style="margin-bottom:.3rem;font-weight:normal;">此商品以下地区不发货：</h2>
+                    <h2 style="line-height:1.024rem;">{{sk_nondelivery_area}}</h2>
+                </div>
+                <span class="btn confirm-btn" style="color:#fff;">确定</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"></script>
+<div id="info-foot" class="info-foot" style="display: none;">
+    <div>
+        <a href="javascript:void(0)" class="back" onclick="toIndex()">
+            <i class="iconfont icon-fanhui to-index"></i>
+            <span class="to-index">返回</span>
+        </a>
+    </div>
+    <div class="show-flow"  id="showflowbtn">
+        <i class="iconfont icon-sort"></i>
+        <span>流程</span>
+    </div>
+    <a  class="get-invite"></a>
+    <a id="applyText" class="get-apply">立即申请</a>
+</div>
+<script type="text/javascript">
+    $('#applyText').on('click',function(){
+        location.href = '../JpinShopIssue/OrderFlow0.html?id=' + activityid;
+    })
+    $('#showflowbtn').on('click',function(){
+        console.log(1)
+        $("#flex-bg").css("display",'block');
+        $('#flow').css("display",'block');
+    })
+</script>
+<div class="flex-bg" id="flex-bg"></div>
+<div class="flow-con" id="flow">
+    <div class="code-con">
+        <div class="dona-bottom">
+            <h3 id="detail-type">试用流程</h3>
+            <div>
+                <img src="../Content/images/JPin/flow.png" alt="" class="dona-image" />
+            </div>
+            <span class="btn">取消</span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+     $('#flow').on('click',function(){
+        $("#flex-bg").css("display",'none');
+        $('#flow').css("display",'none');
+    })
+</script>
+
+        <div style="margin-bottom: 2rem;">
+        </div>
+        <footer id="footerhide" class="footer clearfix">
+            <div style="height: 58px;">
+              <a class=" relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+               <a class="on home" href="../home/list.html">
+                     <i class="iconfont icon-gift"></i><i class="iconfont iconS icon-giftS"></i>免费试用
+                </a>
+                <a class=" daily_task" href="../Invitation.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>分享赚钱
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>试用进展
+                </a>
+                <a class=" more" href="../UserAccount/Login.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>我的
+                </a>
+            </div>
+        </footer>
+        <div class="toTop" onclick="$('body,html').animate({scrollTop:0},500);">
+    </div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form5546.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.22e12.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading7c3b.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.me6fe.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialogae43.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookiefaf4.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browserb36e.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app7b06.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/basee721.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfontfc6d.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/styled796.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.345ba.js"></script>
+<script type="text/javascript" src="../Scripts/Common73d4.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont39ba.css" />
+    <script>
+        var userId=0;
+        var shopId=-1;
+         var str = window.location.search;
+     var aid = str.replace(/[^0-9]/ig,"");
+     if(aid.length>0){
+        shopId=aid;
+     }
+     console.log(aid.length);
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        if(localStorage.getItem('token')){
+            location.href = '../UserAccount/UserAccount.html';
+        }
+    </script>
+
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index8948.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/mytryout4317.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/account9514.css"/>
+
+<script type="text/javascript" src="../Scripts/views/account88b4.js"></script>
+
+<script type="text/javascript" src="../Scripts/uploadimagea806.js"></script>
+
+<header class="header  task-top">
+  <i class="iconfont icon-Toright" style="color: #000;display: inline-block;float: left;margin-left: 0.2rem;" onclick="history.go(-1)(-1)"></i>登录
+    <div class="righthot thot">
+        <a class="icon-userCenter" href="Regist.html">
+            新用户注册
+        </a>
+    </div>
+</header>
+<div style="height: 2rem;"></div>
+<div class="login">
+    <!-- <img src="../Content/images/icon/icon.png" alt="Alternate Text" /> -->
+    <div class="item">
+        <i class="iconfont icon-phone"></i><input type="text" name="name" id="name" value="" placeholder="请输入手机号或用户名"/>
+        <span id="namewarn" class="warn"></span>
+    </div>
+    <div class="item">
+        <i style="float: left;" class="iconfont icon-pwd"></i><input style="float: left;width: 50%" type="password" name="name" id="pwd" placeholder="请输入密码"/>
+         <span id="pwdwarn" class="warn"></span>
+    </div>
+    <div class="btn gray submit-btn">
+        登录
+    </div>
+    <!-- <div class="btn" style="display: none;"  id="wxlogin" onclick="app.weixinlogin(); layer.open({ type: 2 });">
+        <i class="iconfont icon-wx"></i>微信授权登录
+    </div>
+    <div class="btn" style="display: none;" id="weixinBtn" >
+        <i class="iconfont icon-wx"></i>微信浏览器登录
+    </div> -->
+    <a href="FindLoginPassword.html">忘记密码？</a>
+</div>
+<script type="text/javascript" src="../Scripts/md5.js"></script>
+<script type="text/javascript" src="../Scripts/loginpayphone.js"></script>
+<script>
+     bindCaptcha("#pwdwarn", "#name");
+    $(function () {
+        if (globle.isWeixin()) {
+            $("#weixinBtn").css("display", "block");
+        } else {
+            $("#wxlogin").css("display", "block");
+        }
+
+        var back= '';
+        $(".submit-btn").on("click", function () {
+            if ($("#pwd").val().length <= 0 || $("#name").val().length <= 0) {
+                myAlert("用户名密码未填写");
+                return false;
+            }
+            var name = $("#name").val();
+            var pwd = $("#pwd").val();
+            var namefalg = /^(?=.*[A-Za-z_\u4E00-\u9FA5])[A-Za-z0-9_\u4E00-\u9FA5]{3,15}$/.test(name) || /^[1][3,4,5,6,7,8,9][0-9]{9}$/.test(name);
+            if (!namefalg) {
+                $("#namewarn").removeClass(".right").html("用户名格式错误");
+                
+            } else {
+                $("#namewarn").addClass(".right").html("");
+            }
+            var pwdfalg = /^[\w\W]{6,16}$/.test(pwd);
+            if (!pwdfalg) {
+                $("#pwdwarn").removeClass(".right").html("密码格式错误");
+            } else {
+                $("#pwdwarn").addClass(".right").html("");
+            }
+            var password=hex_md5(pwd);
+            if (namefalg && pwdfalg) {
+                var formdata={};
+                formdata.username=name
+                formdata.password=password
+                formdata.persistent=1;
+                $.post("http://www.xss188.com/rest_web/users/user/login",formdata,
+                function(result){
+                    console.log(result)
+                  if(result.code==0){
+                    location.href='../UserAccount/UserAccount.html'
+                  }else{
+                    layer.msg('用户名或密码错误');
+                  }
+                })
+            }
+        });
+
+        $("#pwd,#name").on("keydown", function() {
+            if ($("#pwd").val().length > 0 && $("#name").val().length > 0) {
+                $(".submit-btn").removeClass("gray").addClass("red");
+            } else {
+                $(".submit-btn").removeClass("red").addClass("gray");
+            }
+        });
+        $("#weixinBtn").click(function () {
+            location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx873edebf8af9bbfd&amp;redirect_uri=http%3a%2f%2fwww.meilipa.com%2fCommonBase%2fWeiXinLoginInWX&amp;response_type=code&amp;scope=snsapi_userinfo&amp;state=#wechat_redirect";
+        });
+
+
+        $("#name").keydown(function (event) {
+            if (event.keyCode == 13) {
+                $(".submit-btn").click();
+            }
+        });
+        $("#pwd").keydown(function (event) {
+            if (event.keyCode == 13) {
+                $(".submit-btn").click();
+            }
+        });
+    });
+</script>
+        <div style="margin-bottom: 2rem;">
+        </div>
+        <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class="relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+               <a class=" home" href="../JpinShopIssue/MyTask.html">
+                     <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-giftS"></i>已接任务
+                </a>
+                <a class=" daily_task" href="../JpinShopIssue/Appeal.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>申诉中心
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>我的消息
+                </a>
+                <a class="on more" href="../UserAccount/UserAccount.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>个人中心
+                </a>
+            </div>
+        </footer>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&amp;web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form5546.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.22e12.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading7c3b.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.me6fe.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialogae43.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookiefaf4.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browserb36e.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app7b06.js"></script>
+
+</body>
+</html>

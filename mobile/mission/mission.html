@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="zh">   
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+    <script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    
+    <link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+    <link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+    <style>body{    background: #eee;}</style>
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+    <body>
+        <header class="header task-top frv" style="line-height: 2rem">
+            <i class="arrows" onclick="history.go(-1)(-1)"></i>
+            接任务
+        </header>
+        <div class="index">
+            <div class="index-tips">
+                <div class="index-tips-info">
+                    ID:<span class="index-tips-id">13246</span>
+                    <span style="color: #fff">|</span>
+                    完成率：<span class="index-tips-completion">100</span>
+                </div>
+                <div class="index-tips-message">设置好每个平台的模式，可以自由组合多个平台同时接单哦！</div>
+            </div>
+            <div class="index-account">
+                <div class="accountlist">
+                    <ul >
+                        <li><a onclick="altImg();">添加淘宝账号</a></li>
+                        <li><a >添加京东账号</a></li>
+                        <li><a >添加拼多多账号</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                <div style="margin-bottom: 2rem;">
+        </div>
+        <a class="bottombutton" href="../UserAccount/TaoBaoChagne.html">
+            接单
+        </a>
+        <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class="on relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+              <a class=" home" href="../JpinShopIssue/MyTask.html">
+                     <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-giftS"></i>已接任务
+                </a>
+                <a class=" daily_task" href="../JpinShopIssue/Appeal.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>申诉中心
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>我的消息
+                </a>
+                <a class="more" href="../UserAccount/UserAccount.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>个人中心
+                </a>
+            </div>
+        </footer>
+    </body>
+<script type="text/javascript" src="../Scripts/layer.m/layer.me6fe.js"></script>
+<script type="text/javascript" src="../Scripts/layerdialogae43.js"></script>
+<script>
+    function addAccount(parameters) {
+        myAlert("去绑定淘宝账号",function(){
+            location.href = "../index.html"
+        })
+    }
+</script>
+
+</html>

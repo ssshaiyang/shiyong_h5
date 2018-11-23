@@ -1,0 +1,64 @@
+* {margin: 0px;padding: 0px;}
+body {margin-right: auto;margin-left: auto;background-color: #FFF;width: 100%;}
+.orderhuis,.owndd {float: left; height:1.6rem;width: 4rem; background-color: #666672;font-size: 0.65rem;color: #ffffff;text-align: center;line-height: 1.5rem; border-radius: 0.8rem;border: 1px solid #cccccc;}
+.orderhuis{ height: 1.6rem; line-height: 1.6rem;}
+.owndd{ background-color: #ff464e; float: right; border-radius: 0.8rem;}
+.aac {height: 48px;width: 163px;margin-right: auto;margin-left: auto;background-color: #f35b51;font-size: 23px;	color: #FFF;text-align: center;line-height: 48px;border-radius: 25px;margin-top: 40px;}
+.picture {text-align:center;}
+.blackopcit {position: absolute;left: 0px;right: 0px;bottom:0;background: #404040; padding-bottom: 0.4rem; background: rgba(0,0,0,0.8);}
+.name {color: #FFF;font-weight: bold;font-size:0.75rem; padding-left: 0.4rem; line-height: 1.2rem; white-space: nowrap; overflow: hidden;text-overflow: ellipsis}
+.price {color: #bec0c6;font-weight: bold; font-size: 0.65rem; padding-left: 0.4rem;}
+.price span{ color: #f35b51;}
+.price>*{ display: inline-block; float: left; line-height: 1rem; vert-align: middle;}
+.deposit {font-size: 0.7rem;color: #888888;width: 100%;border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #d4d4d4;height: 2rem;text-align: center;line-height: 2rem}
+.bao { top: 6px; position: relative; margin-right: 0.1rem; width: 1rem; height: 1rem;}
+.deposit *{ display: inline-block; vert-align: middle;}
+.pai {position: relative; margin-left: 0.2rem; color: #fff; height: 1rem; overflow: hidden; padding: 0 0.3rem; border-radius: 5px; font-size: 0.6rem;}
+.iap{background-color: #f79100}
+.piaa{ background-color: #7bae23;}
+.pibb{background-color: #ff464e}	
+.path ,.pay {font-size: 0.65rem;line-height: 1.3rem;color: #4a4a56;border-bottom:1px solid #d4d4d4; padding:0.4rem;}
+.path .syong {font-weight: bold;color: #ff464e;}
+
+
+.pay p {line-height: 25px;} 
+.pay .zx {font-weight: bold;color: #6b6f78;}
+.pay .zxone {font-weight: bold;color: #ff464e;}
+
+.base {background-color: #f2f2f2;height: 2.4rem; position: fixed; width: 100%; right: 0; bottom: 0px; box-shadow: 0 0 4px #777;}
+
+
+.drh{ font-size: 0.6rem; line-height: 1rem; padding: 0.3rem;}
+.flh { margin-top: 50px;color: #88878f;}
+.qxjy { margin-top: 25px;}
+.bfen {margin-top: 15px;}
+.wmen {text-align: center;font-size: 16px;color: #979797}
+.zymg { margin:0 10px}
+
+.evalu{background: #fafafa; border-top: 1px solid #dfdfdf;margin-bottom: 73px;}
+.evalu h1{ font-size: 16px; font-weight: bold; font-family: Microsoft YaHei; color: #888888;margin: 19px 10px 0 10px}
+.evalu textarea{ height: 88px; width: 99.6%;  border: 1px solid #e0dfe3; position: relative;font-size: 14px;}
+.evalu a{ display: block; height: 39px;margin: 10px 10px 0 10px;
+           background: #6ec877; text-align: center; font-size: 16px;
+            color: #ffffff; line-height: 37px; position: relative;}
+.aoto_a{ height: 88px; margin: 11px 10px 0px 10px;}
+.evalu_a{ height: 119px; margin: 0 10px 0px 10px;border-bottom: 1px solid #d4d4d4} 
+.evalu_a img{width: 71px;height: 71px;border-radius: 50%;overflow: hidden; float: left;margin-top: 25px;}
+.evalu_b{ float: left;margin-top: 25px;margin-left: 20px;position: absolute;left: 70px;}
+.evalu_b h2{ font-size: 14px;color: #999999}
+.evalu_c{ color: #666666; font-size: 13px;margin-top: 5px;margin-right: 10px;  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;}
+
+.mobile_order{
+    background: url("/Content/images/modile_img.png") no-repeat;   
+    background-color: #1790ce;
+    padding-left: 1rem;
+    background-size: 0.6rem auto;
+    background-position: center left 0.3rem;
+    }
+
+
+/*******��è/����/�Ա�********/
+.taob{background:#ff5400}
+.jind{background:#c91423}
+.tianm{background:#dd2727}

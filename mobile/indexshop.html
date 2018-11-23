@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>飞猪试用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="Content/themes/basee721.css"/>
+<link rel="stylesheet" type="text/css" href="Content/font/iconfontfc6d.css"/>
+
+    <link rel="stylesheet" type="text/css" href="Scripts/Validform/styled796.css"/>
+
+    <script type="text/javascript" src="Scripts/jquery-1.8.345ba.js"></script>
+<script type="text/javascript" src="Scripts/Common73d4.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Content/font/iconfont39ba.css" />
+    <script>
+        var userId=0;
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5" />
+<link href="Scripts/swiper/css/swiper.min.css" rel="stylesheet" />
+<script src="Scripts/swiper/js/swiper.min.js"></script>
+<script src="Scripts/jquery.lazyload.js"></script>
+<script src="Scripts/vue.js"></script>
+<script src="Scripts/jquery.infinitescroll.js"></script>
+<style>
+    html{
+        -webkit-text-size-adjust:100%;
+        -ms-text-size-adjust:100%;
+        -webkit-text-size-adjust:none;
+        -webkit-tap-highlight-color:rgba(0,0,0,0)
+    }
+    html .layui-m-layerchild{
+        font-size:28px;
+    }
+    html .layui-m-layerbtn span{
+        font-size:28px;
+    }
+    html .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+            bottom: 20px;
+    }
+    html .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{
+        margin: 0 10px;
+    }
+    html .swiper-pagination-bullet{
+        width:16px;
+        height:16px;
+    }
+    html .footer{
+        font-size:0.512rem;
+    }
+
+
+    /*html .shangxin-goods-box>div li .t-btn, html .report, html .jp-con, html .jp-con .jp-list li div.jp-btn a, html .info-num, html .fix-detail .info-num li, html .info-foot div:first-child{
+        border-width:2px;
+    }
+    html .indexCat .indexCat1, html .indexCat .indexCat2, html .indexCat .indexCat3, html .indexCat .indexCat4{
+        border-width:4px;
+    }*/
+
+    html .jp-groom>div ul li span.t-price{
+        background:none;
+        text-decoration:line-through;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="Content/themes/jp/indexf986.css"/>
+
+<!-- <script type="text/javascript" src="PageScript/jing/indexcb85.js?a9db6683b0986347a6e99633efc68f35"></script> -->
+
+
+<div id="index">
+    
+    <style>
+        .jp-groom-bg-shangxin {
+            background: url("Content/images/lijishangxin.png") left top no-repeat #fff;
+            background-size: 100%;
+            height: 8.895rem;
+            padding:0 0.68rem;
+        }
+        .shangxin-title-box{    
+            padding: 0.68rem 0 0.23rem 0;
+        }
+        .shangxin-title-box .shangxin-title{
+            font-size: 0.85rem;
+            color: #fff;
+            font-weight: bold;
+        }
+        .shangxin-title-box .right-title{
+            float:right;
+            line-height: 1.2rem;
+            color:#fff;
+        }
+         .shangxin-title-box .right-title i{
+             display: inline-block;
+             vertical-align: middle;
+             margin-left:0.1rem;
+             margin-top: -0.05rem;
+         }
+         .shangxin-goods-box{
+             padding-top: 0.368rem;
+             overflow:hidden;
+             height:5.705rem;
+             width:100%;
+             box-shadow: 1px 7px 15px -9px #888888;
+             background:#fff;
+         }
+         .shangxin-goods-box>div{
+            height: 8rem;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+         }
+         .shangxin-goods-box>div ul{
+             height:5.61rem;
+             padding-left:0.368rem;
+         }
+         .shangxin-goods-box > div li {
+            float: left;
+            /*height:5.61rem;*/
+            height: 5.337rem;
+            width: 3.2rem;
+            margin-right: 0.368rem;
+            
+         }        
+         .shangxin-goods-box>div li:last-child{
+             margin-right:0;
+         }
+         .shangxin-goods-box>div li img{
+             width:3.2rem;
+             height:3.2rem;
+             display:block;
+         }
+         .shangxin-goods-box>div li a{
+             display:block;
+             text-align:center;
+         }
+         .shangxin-goods-box>div li .t-price {
+            font-size: 0.55rem;
+            display: inline-block;
+            margin: 0.2rem auto 0.1rem;
+            color: #ff464e;
+            background: url(content/images/jpin/dian-red.jpg) repeat-x;
+            background-position: center center;
+         }
+         .shangxin-goods-box>div li .t-btn {
+            border-radius: 0.2rem;
+            color: #ff464e;
+            height: 1rem;
+            font-size: 0.55rem;
+            line-height: 1rem;
+            margin: 0 0.3rem;
+            display: block;
+            border: 1px solid #ff464e;
+         }
+    </style>
+
+    <style>
+        .clnz_box{
+            padding:0.469333rem 0 0 0.469333rem;
+            background:#fff;
+        }
+        .clnz_img{
+            height:4.48rem;
+            display:block;
+            padding-bottom:0.64rem;
+            padding-right:0.469333rem;
+        }
+        .clnz_img>img{
+            width:100%;
+            height:100%;
+        }
+        .clnz_img .jp-groom{
+            height:5.9rem;
+        }
+        .clnz_box .jp-groom>div{
+            padding-left:0;
+        }
+        .clnz_box .jp-groom>div>ul{
+            display:block;
+            height:5.548rem;
+            padding-right:0rem;
+        }
+        .clnz_box .jp-groom>div>ul>li{
+            margin-right:0.554rem;
+            float:left;
+        }
+        .clnz_box .jp-groom>div>ul>li:last-child{
+            margin-right:0;
+        }
+        .clnz_box .jp-groom>div>ul a{
+            width: 3.84rem;
+            display:block;
+        }
+        .clnz_box .jp-groom>div>ul p{
+            width:100%;
+            font-size:0.45rem;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            margin-bottom:0.15rem;
+            text-align: left;
+            line-height:0.45rem;
+        }
+        .clnz_box .jp-groom>div>ul img{
+            width:3.84rem;
+            height:3.84rem;
+            margin-bottom:0.2rem;
+        }
+        .clnz_box .jp-groom>div>ul .t-price{
+            font-size:0.4rem;
+            margin:0;
+        }
+
+         .clnz_box .jp-groom>div>ul .rt{
+             font-size:0.4rem;
+             color:#999;
+        }
+    </style>
+<div id="detail" class="fix-detail" >
+    <div class="toback to-index" id="back-to-index">
+        <i class="iconfont icon-back1"></i>
+    </div>
+    <div id="swiper2" class="swiper-container" style="position:relative">
+        <div class="swiper-wrapper" id="shopic">
+            <!-- <div class="swiper-slide">
+                <img id="logo_pic1" v-bind:src="logo_pic1" alt="加载失败">
+            </div>
+            <div class="swiper-slide">
+                <img v-bind:src="logo_pic2" alt="加载失败">
+            </div>
+            <div class="swiper-slide">
+                <img v-bind:src="logo_pic3" alt="加载失败">
+            </div>
+            <div class="swiper-slide">
+                <img v-bind:src="logo_pic4" alt="加载失败">
+            </div> -->
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+    </div>
+    <script type="text/javascript">
+        var back = document.getElementById('back-to-index');
+        back.onclick = function() {
+            location.href = './index.html';
+        }
+    </script>
+    <div class="info-hd" >
+        <p class="title">
+            <span class="name" id="shop_name" style="">111</span>
+            <em >券</em>
+            <em>花呗</em>
+            <em>白条</em>
+            <em>信用卡</em>
+        </p>
+        <span>价值 <em id="shop-money"></em></span>
+
+        <span>剩余<span id="shop-copies"></span></span>
+    </div>
+    <div class="not-area" v-if="sk_nondelivery_area">
+        <span class="iconfont icon-zhu-copy icon"></span>
+        <span class="not-area-title">以下地区不发货，请勿申请</span>
+        <i class="iconfont icon-Toleft" style="float:right"></i>
+    </div>
+    <ul class="info-num">
+        <li>
+            <span id="listpeople1"></span>
+        </li>
+        <li>
+            <span id="listpeople2"></span>
+        </li>
+    </ul>
+    <div class="usera-kong"></div>
+    <div class="info-cat">
+        <span class="act">商品详情</span>
+        <span>猜你喜欢</span>
+    </div>
+    <div class="info-list">
+        <div class="act  jp-con">
+            <div class="intro">
+            </div>
+<!--             <div id="guss-like">
+                <div>
+                    <i class="iconfont icon-xin"></i><span>猜你喜欢</span>
+                </div>
+            </div> -->
+            <div id="showloading" style="text-align: center;margin-top: 2rem"><img src="./loding.gif"></div>
+            <ul id="list-apply1" class="jp-list" style="width: 90%;margin: 0 auto;margin-bottom: 2rem"></ul>
+            <div class="get-more" id="get-more">
+                <a href="list3da1.html?orderType=5">加载更多</a>
+            </div>
+        </div>
+        <div class="jp-con">
+            <ul id="list-apply" class="jp-list" style="margin-bottom: 2rem">
+                
+            </ul>
+            <div id="showloding" style="text-align: center;"><img src="./loding.gif"></div>
+            <!-- <div class="get-more">
+                <a href="list3da1.html?orderType=5">加载更多</a>
+            </div> -->
+        </div>
+    </div>
+    <div class="flow-con" id="flow2">
+        <div class="code-con">
+            <div class="dona-bottom">
+                <h1 style="font-size:0.7rem; margin:1.3866rem 0; text-align:center;font-weight: 600;">温馨提示</h1>
+                <div class="not-area-tips">
+                    <h2 style="margin-bottom:.3rem;font-weight:normal;">此商品以下地区不发货：</h2>
+                    <h2 style="line-height:1.024rem;">{{sk_nondelivery_area}}</h2>
+                </div>
+                <span class="btn confirm-btn" style="color:#fff;">确定</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"></script>
+<div id="info-foot" class="info-foot" style="display: block;">
+    <div>
+        <a href="javascript:void(0)" class="back" onclick="history.go(-1)(-1)">
+            <i class="iconfont icon-fanhui to-index"></i>
+            <span class="to-index">返回</span>
+        </a>
+    </div>
+    <div class="show-flow" id="showflowbtn">
+        <i class="iconfont icon-sort"></i>
+        <span>流程</span>
+    </div>
+    <a  class="get-invite"></a>
+    <a id="applyText" class="get-apply">立即申请</a>
+</div>
+    
+    <div class="flex-bg" id="flex-bg" ></div>
+    <div class="flow-con" id="flow">
+        <div class="code-con">
+            <div class="dona-bottom">
+                <h3 id="detail-type">试用流程</h3>
+                <div>
+                    <img src="Content/images/JPin/flow.png" alt="" class="dona-image" />
+                </div>
+                <span class="btn" id="returnfirst">取消</span>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="./Scripts/shopdetails.js">
+
+</script>
+    
+        <div class="toTop" onclick="$('body,html').animate({scrollTop:0},500);">
+    </div>
+    <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&amp;web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="Scripts/jquery.form5546.js"></script>
+
+    <script type="text/javascript" src="Scripts/Validform/Validform_v5.3.22e12.js"></script>
+
+    <script type="text/javascript" src="Scripts/post.loading7c3b.js"></script>
+
+    <script type="text/javascript" src="Scripts/layer.m/layer.me6fe.js"></script>
+
+    <script type="text/javascript" src="Scripts/layerdialogae43.js"></script>
+
+    <script type="text/javascript" src="Scripts/jquery.cookiefaf4.js"></script>
+
+    <script type="text/javascript" src="Scripts/browserb36e.js"></script>
+
+    <script type="text/javascript" src="Scripts/app7b06.js"></script>
+
+</body>
+</html>

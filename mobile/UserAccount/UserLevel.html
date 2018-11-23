@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>用户等级</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/mytryout.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+
+<script type="text/javascript" src="../Scripts/jquery.infinitescroll.js"></script>
+
+<script type="text/javascript">
+    $(function() {
+        $(".con").infinitescroll({
+            itemSelector: ".billion"
+        });
+    });
+</script>
+<style>
+    .bar ul li{width: 33.33%;}
+    .bar.zt-menu ul li a{height: 1.85rem;}
+     .sel {
+        width: 2rem;
+        margin: 0 auto;
+         height: 0.15rem; margin-top: 1px;
+    }
+    .billion{background: #fff;border-bottom: 1px solid #dedede; padding: 0.1rem 0.6rem 0.5rem;}
+    .billion .r{float: right;}
+    .billion .l{float: left;}
+    .billion .exactly{padding-top: 0.4rem;height: 1rem;line-height: 1rem;font-size: 0.6rem;}
+    .billion .l.title{width:70%;overflow: hidden;text-overflow: ellipsis;white-space:nowrap;font-weight: bold;}
+</style>
+<header class="header acct-top" style="background-color: #FF9900"><i class="arrows" onclick="history.go(-1)(-1)"></i>用户等级</header>
+<div class="bar zt-menu" style="background: #fff;"> 
+    <div style="margin: 0;padding: 0;height: 2rem;overflow: hidden;padding-top: 0.6rem;">
+        <div style="width: 20%;float: left;line-height: 2rem;text-align: center;"><img style="width: 50%;height: 1.6rem" src="../Content/images/truth_face.jpg"></div>
+        <div style="width: 50%;float: left;">
+            <div style="margin-bottom:0.4rem">用户ID：757957</div>
+            <span>用户等级:L0</span><span style="margin-left: 1rem">积分:0</span>
+        </div>
+        <div style="width:30%;float: right;line-height: 2rem">
+            <span style="margin-left: 2rem;color: red">积分规则</span>
+        </div>
+    </div>
+    <ul>
+        <li class="typeli"><a class="typea">积分 </a>
+        </li>
+        <li class="typeli"><a class="typea">日志 </a>
+        </li>
+        <li class="typeli"><a class="typea">全部 </a>
+        </li>
+    </ul>
+</div>
+<div class="usera-kong"></div>
+<div class="con">
+    <!-- <div id="showloding" style="margin-top: 6rem;text-align: center;"><img src="../loding.gif"></div> -->
+
+    <div class="navigation" >
+        <a href="/UserAccount/GetNextMoneyRecords?type=-1&page=2"></a>
+    </div>
+
+</div>
+<!-- <script type="text/javascript" src="../Scripts/moneyRecords.js"> -->
+
+</script>
+<div style="height: 2rem"></div>
+        <div style="margin-bottom: 2rem;">
+        </div>
+        <footer class="footer clearfix">
+            <div style="height: 58px;">
+              <a class=" relation" href="../index.html">
+                    <i class="iconfont icon-home"></i>
+                    <i class="iconfont iconS icon-homeS"></i>
+                    首页
+               </a>
+               <a class=" home" href="../home/list.html">
+                     <i class="iconfont icon-gift"></i><i class="iconfont iconS icon-giftS"></i>免费试用
+                </a>
+                <a class=" daily_task" href="../Invitation.html">
+                    <i class="iconfont icon-geren"></i><i class="iconfont iconS icon-gerenS"></i>分享赚钱
+                </a>
+                <a class=" myjp" href="../JpinShopIssue/List.html?type=1">
+                    <i class="iconfont icon-jpIcon"></i><i class="iconfont iconS icon-jpiconS"></i>试用进展
+                </a>
+                <a class="on more" href="../UserAccount/UserAccount.html">
+                    <i class="iconfont icon-people"></i><i class="iconfont iconS icon-peopleS"></i>我的
+                </a>
+            </div>
+        </footer>
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>

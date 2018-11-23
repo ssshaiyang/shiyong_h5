@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>佣金提现</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="full-screen" content="yes">
+    <link href="../icon.png" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../Content/themes/base.css"/>
+<link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css"/>
+
+    <link rel="stylesheet" type="text/css" href="../Scripts/Validform/style.css"/>
+
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../Scripts/Common.js"></script>
+<script type="text/javascript" src="../Scripts/ajaxHeader.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Content/font/iconfont.css" />
+    <script>
+         var str = window.location.search;
+         var phone = str.replace(/[^0-9]/ig,"");
+         var valToken = localStorage.getItem(''+phone);
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+            };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    
+<link rel="stylesheet" type="text/css" href="../Content/themes/index.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/mytryout.css"/>
+
+<link rel="stylesheet" type="text/css" href="../Content/themes/account.css"/>
+
+<style>
+    .zangh{height: 6.82rem; overflow: hidden; background: #ff474e; font-size: 0.65rem; color: #fff;box-sizing: border-box;padding:1rem 0.6rem 1.9rem;}
+    .zangh div{ margin-top: 1.2rem; font-size: 1.4rem;}
+    .zangh div em{font-size: 0.7rem;}
+    .tx-list{ color: #000; padding: 0 0.6rem ; background-color: #fff;border-bottom: 1px solid #dbdbdb;height: 2.1rem;line-height: 2.1rem;}
+        .tx-list i.icon-Toleft {
+            float: right;
+        }
+    .tx-list a{color: #000;}
+    .tx-list a .icon-tixian{display: inline-block; width: 1rem; color: #f49a01;font-size: 0.6rem;}
+        .tx-list a .icon-mingxi {
+            display: inline-block;
+            color: #ff474e;
+            font-size: 0.8rem;
+            width: 1rem;
+        }
+</style>
+<script type="text/javascript">
+    function drawApply() {
+        
+    }
+</script>
+<header class="header acct-top" style="background-color:#FF9900"><i class="arrows" onclick="history.go(-1)"></i>账户余额</header>
+<div style="height: 2rem;"></div>
+<div class="zangh" style="background-color: #FF9900">
+    账户余额
+    <div id="userBalance">
+        <em>¥</em>5000
+    </div>
+</div>
+<script type="text/javascript">
+    // 显示可用余额
+</script>
+<div class="tx-list"  onclick="location.href='MoneyDrawApply.html'">
+    <a href="javascript:void(0);">
+        <i class="iconfont icon-tixian"></i>提现 <i class="iconfont icon-Toleft"></i>
+    </a>
+    
+</div>
+<div  class="tx-list" onclick="location.href = '../UserAccount/Usermoney.html'">
+    <a href="../UserAccount/MoneyRecords.html"> <i class="iconfont icon-mingxi"></i>明细 <i class="iconfont icon-Toleft"></i></a>
+</div>
+       
+        <div style="display: none"><script src="https://s22.cnzz.com/z_stat.php?id=1264685315&web_id=1264685315" language="JavaScript"></script></div>
+   
+    <div id="loading" class="loading">
+    <div class="loadingContent">
+        <img src="../Content/images/loading.gif" />
+    </div>
+</div>
+    <script type="text/javascript" src="../Scripts/jquery.form.js"></script>
+
+    <script type="text/javascript" src="../Scripts/Validform/Validform_v5.3.2.js"></script>
+
+    <script type="text/javascript" src="../Scripts/post.loading.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layer.m/layer.m.js"></script>
+
+    <script type="text/javascript" src="../Scripts/layerdialog.js"></script>
+
+    <script type="text/javascript" src="../Scripts/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="../Scripts/browser.js"></script>
+
+    <script type="text/javascript" src="../Scripts/app.js"></script>
+
+</body>
+</html>
